@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <arena teamid="24818" retrieved="2008-09-13T19:12:22Z">
+        <name>Cape Sable Sculpins Center</name>
+        <seats>
+            <bleachers price="19" nextPrice="19">13039</bleachers>
+            <lowerTier price="67" nextPrice="67">1388</lowerTier>
+            <courtside price="190" nextPrice="190">317</courtside>
+            <luxury price="1200" nextPrice="1200">22</luxury>
+        </seats>
+        
+    </arena>
+</bbapi>

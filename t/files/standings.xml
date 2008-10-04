@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <standings season="6" retrieved="2008-09-15T01:06:51Z">
+        <league id="128" level="1">Naismith</league>
+        <country id="4">Canada</country>
+        <regularSeason>
+            <conference>
+                <team id="24809">
+                    <teamName>Molson Canadians</teamName>
+                    <wins>8</wins>
+                    <losses>1</losses>
+                    <pf>897</pf>
+                    <pa>741</pa>
+                </team><team id="24823">
+                    <teamName>BC Törööö</teamName>
+                    <wins>7</wins>
+                    <losses>2</losses>
+                    <pf>991</pf>
+                    <pa>729</pa>
+                </team><team id="24884">
+                    <teamName>New Brunswick Maddogs</teamName>
+                    <wins>5</wins>
+                    <losses>4</losses>
+                    <pf>1008</pf>
+                    <pa>1065</pa>
+                </team><team id="24838">
+                    <teamName>North East Point Toastifiers</teamName>
+                    <wins>4</wins>
+                    <losses>5</losses>
+                    <pf>927</pf>
+                    <pa>887</pa>
+                </team><team id="24867">
+                    <teamName>Zanarkand Abes</teamName>
+                    <wins>4</wins>
+                    <losses>5</losses>
+                    <pf>982</pf>
+                    <pa>963</pa>
+                </team><team id="24861">
+                    <teamName>Waterloo Raptors</teamName>
+                    <wins>4</wins>
+                    <losses>5</losses>
+                    <pf>1086</pf>
+                    <pa>1113</pa>
+                </team><team id="24812">
+                    <teamName>NW Alberta Kaboom United</teamName>
+                    <wins>3</wins>
+                    <losses>6</losses>
+                    <pf>990</pf>
+                    <pa>1042</pa>
+                </team><team id="24866">
+                    <teamName>Iqaluit Stingers</teamName>
+                    <wins>2</wins>
+                    <losses>7</losses>
+                    <pf>720</pf>
+                    <pa>965</pa>
+                </team>
+            </conference>
+            <conference>
+                <team id="24818">
+                    <teamName>Cape Sable Sculpins</teamName>
+                    <wins>9</wins>
+                    <losses>0</losses>
+                    <pf>1077</pf>
+                    <pa>881</pa>
+                </team><team id="24877">
+                    <teamName>The Alexander Keiths</teamName>
+                    <wins>5</wins>
+                    <losses>4</losses>
+                    <pf>949</pf>
+                    <pa>877</pa>
+                </team><team id="24833">
+                    <teamName>The Saints Are Coming</teamName>
+                    <wins>5</wins>
+                    <losses>4</losses>
+                    <pf>1026</pf>
+                    <pa>1013</pa>
+                </team><team id="24831">
+                    <teamName>Serenity Now!</teamName>
+                    <wins>4</wins>
+                    <losses>5</losses>
+                    <pf>935</pf>
+                    <pa>934</pa>
+                </team><team id="25046">
+                    <teamName>Evergreen Terraceists</teamName>
+                    <wins>4</wins>
+                    <losses>5</losses>
+                    <pf>807</pf>
+                    <pa>824</pa>
+                </team><team id="24910">
+                    <teamName>Firefly</teamName>
+                    <wins>3</wins>
+                    <losses>6</losses>
+                    <pf>883</pf>
+                    <pa>960</pa>
+                </team><team id="24816">
+                    <teamName>New Glasgow Panthers</teamName>
+                    <wins>3</wins>
+                    <losses>6</losses>
+                    <pf>929</pf>
+                    <pa>1044</pa>
+                </team><team id="25119">
+                    <teamName>Kelowna Ballers</teamName>
+                    <wins>2</wins>
+                    <losses>7</losses>
+                    <pf>848</pf>
+                    <pa>1017</pa>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        
+        
+    </standings>
+</bbapi>
