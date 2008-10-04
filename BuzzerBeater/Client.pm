@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.1 2008-10-04 16:56:38 ken Exp $
+#  $Id: Client.pm,v 1.2 2008-10-04 21:04:46 ken Exp $
 #
 
 use strict;
@@ -16,11 +16,13 @@ use XML::Twig;
 use Tie::Cycle;
 
 use BuzzerBeater::Arena;
-use BuzzerBeater::Roster;
-use BuzzerBeater::Player;
 use BuzzerBeater::Boxscore;
-use BuzzerBeater::Schedule;
 use BuzzerBeater::Economy;
+use BuzzerBeater::Player;
+use BuzzerBeater::Roster;
+use BuzzerBeater::Schedule;
+use BuzzerBeater::Standings;
+use BuzzerBeater::Teaminfo;
 
 use Data::Dumper;
 $Data::Dumper::Indent = 1;
@@ -33,7 +35,7 @@ sub AUTOLOAD {
     our $AUTOLOAD;
     ( my $method = $AUTOLOAD ) =~ s/.*:://s;
 
-    my @autos = qw( arena boxscore economy roster schedule standings );
+    my @autos = qw( arena boxscore economy roster schedule standings teaminfo );
 
     my $obj;
     if ( grep {/$method/} @autos ) {
@@ -57,9 +59,9 @@ sub new {
 sub _initialize {
     my $self = shift;
 
+    #  TODO: Cycle properly!  For now, I've removed the broken site.
     $self->{apiUrls} = [
-        qw ( http://www.buzzerbeater.org/BBAPI/
-            http://www2.buzzerbeater.org/BBAPI/ )
+        qw ( http://www2.buzzerbeater.org/BBAPI/ )
     ];
 
     tie $self->{apiCycle}, 'Tie::Cycle', [ shuffle @{ $self->{apiUrls} } ];

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="24818" retrieved="2008-10-04T20:26:36Z">
+        <teamName>Cape Sable Sculpins</teamName>
+        <shortName>CSI</shortName>
+        
+        <owner supporter="1">oeuftete</owner>
+        
+        <league id="128" level="1">Naismith</league>
+        <country id="4">Canada</country>
+    </team>
+</bbapi>
