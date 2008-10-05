@@ -1,5 +1,5 @@
 #
-#  $Id: Teaminfo.pm,v 1.1 2008-10-04 21:04:46 ken Exp $
+#  $Id: Teaminfo.pm,v 1.2 2008-10-05 19:45:26 ken Exp $
 #
 
 use strict;
@@ -48,7 +48,12 @@ sub setFromXml {
 
         $self->{leagueid}  = $el->first_child('league')->att('id');
         $self->{countryid} = $el->first_child('country')->att('id');
-        $self->{supporter} = $el->first_child('owner')->att('supporter');
+
+        my $owner = $el->first_child('owner');
+        if ($owner) {
+          $self->{supporter} = $el->first_child('owner')->att('supporter');
+        }
+
     }
 
     else {

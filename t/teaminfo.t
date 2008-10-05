@@ -1,5 +1,5 @@
 #
-#  $Id: teaminfo.t,v 1.2 2008-10-05 19:09:44 ken Exp $
+#  $Id: teaminfo.t,v 1.3 2008-10-05 19:45:26 ken Exp $
 #
 use strict;
 use warnings;
@@ -34,3 +34,10 @@ isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
 is( $teaminfo->league(),   'Naismith', 'Check league name' );
 is( $teaminfo->leagueid(), 128,        'Check league ID' );
 is( $teaminfo->country(),  'Canada',   'Check country name' );
+is( $teaminfo->owner(),    'oeuftete', 'Check owner' );
+
+$xml_input = read_file('t/files/teaminfo_bot.xml');
+isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
+    'BuzzerBeater::Teaminfo' );
+
+is( $teaminfo->owner(), undef, 'Check empty owner on bot' );
