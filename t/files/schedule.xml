@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <schedule teamid="24818" season="6" retrieved="2008-10-05T01:04:59Z">
+        <match id="6317966" start="2008-08-14T15:00:00Z" type="friendly">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>110</score>
+            </awayTeam>
+            <homeTeam id="176493">
+                <teamName>The Bouncing Camels</teamName>
+<score>106</score>
+            </homeTeam>
+        </match>
+    
+        <match id="4149095" start="2008-08-15T14:00:00Z" type="pl.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>88</score>
+            </awayTeam>
+            <homeTeam id="32182">
+                <teamName>CR Flamengo</teamName>
+<score>78</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351243" start="2008-08-16T23:00:00Z" type="league.rs.tv">
+            <awayTeam id="25119">
+                <teamName>Kelowna Ballers</teamName>
+<score>104</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>128</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351251" start="2008-08-19T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>109</score>
+            </awayTeam>
+            <homeTeam id="24833">
+                <teamName>The Saints Are Coming</teamName>
+<score>98</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351436" start="2008-08-21T23:00:00Z" type="cup">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>117</score>
+            </awayTeam>
+            <homeTeam id="25088">
+                <teamName>Amos Hooligans</teamName>
+<score>61</score>
+            </homeTeam>
+        </match>
+    
+        <match id="4149102" start="2008-08-22T14:00:00Z" type="pl.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>133</score>
+            </awayTeam>
+            <homeTeam id="42446">
+                <teamName>Higuey</teamName>
+<score>80</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351259" start="2008-08-23T23:00:00Z" type="league.rs">
+            <awayTeam id="24910">
+                <teamName>Firefly</teamName>
+<score>77</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>119</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351267" start="2008-08-26T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>147</score>
+            </awayTeam>
+            <homeTeam id="24831">
+                <teamName>Serenity Now!</teamName>
+<score>126</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8064939" start="2008-08-28T23:00:00Z" type="cup">
+            <awayTeam id="24871">
+                <teamName>TorRaptors</teamName>
+<score>53</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>116</score>
+            </homeTeam>
+        </match>
+    
+        <match id="4149108" start="2008-08-29T14:00:00Z" type="pl.rs">
+            <awayTeam id="26855">
+                <teamName>Hokkaido Rage</teamName>
+<score>65</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>105</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351273" start="2008-08-30T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>96</score>
+            </awayTeam>
+            <homeTeam id="24877">
+                <teamName>The Alexander Keiths</teamName>
+<score>85</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351280" start="2008-09-02T23:00:00Z" type="league.rs">
+            <awayTeam id="24816">
+                <teamName>New Glasgow Panthers</teamName>
+<score>103</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>135</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8081187" start="2008-09-04T23:00:00Z" type="cup">
+            <awayTeam id="25095">
+                <teamName>Toronto 5-0</teamName>
+<score>74</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>108</score>
+            </homeTeam>
+        </match>
+    
+        <match id="4149114" start="2008-09-05T14:00:00Z" type="pl.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>96</score>
+            </awayTeam>
+            <homeTeam id="23378">
+                <teamName>Wangsters</teamName>
+<score>74</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351289" start="2008-09-06T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>87</score>
+            </awayTeam>
+            <homeTeam id="25046">
+                <teamName>Evergreen Terraceists</teamName>
+<score>79</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351295" start="2008-09-09T23:00:00Z" type="league.rs">
+            <awayTeam id="24812">
+                <teamName>NW Alberta Kaboom United</teamName>
+<score>90</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>115</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8091353" start="2008-09-11T23:00:00Z" type="cup">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>113</score>
+            </awayTeam>
+            <homeTeam id="24820">
+                <teamName>Cahows</teamName>
+<score>85</score>
+            </homeTeam>
+        </match>
+    
+        <match id="4149120" start="2008-09-12T14:00:00Z" type="pl.rs">
+            <awayTeam id="92854">
+                <teamName>Cat Jumpers</teamName>
+<score>63</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>98</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351302" start="2008-09-13T23:00:00Z" type="league.rs.tv">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>141</score>
+            </awayTeam>
+            <homeTeam id="24861">
+                <teamName>Waterloo Raptors</teamName>
+<score>119</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351309" start="2008-09-16T23:00:00Z" type="league.rs">
+            <awayTeam id="24866">
+                <teamName>Iqaluit Stingers</teamName>
+<score>59</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>103</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8098988" start="2008-09-18T23:00:00Z" type="cup">
+            <awayTeam id="24812">
+                <teamName>NW Alberta Kaboom United</teamName>
+<score>84</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>99</score>
+            </homeTeam>
+        </match>
+    
+        <match id="4149127" start="2008-09-19T14:00:00Z" type="pl.rs">
+            <awayTeam id="32182">
+                <teamName>CR Flamengo</teamName>
+<score>66</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>129</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351316" start="2008-09-20T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>76</score>
+            </awayTeam>
+            <homeTeam id="24809">
+                <teamName>Molson Canadians</teamName>
+<score>86</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351331" start="2008-09-23T23:00:00Z" type="league.rs">
+            <awayTeam id="24884">
+                <teamName>New Brunswick Maddogs</teamName>
+<score>80</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>133</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8105656" start="2008-09-25T23:00:00Z" type="cup">
+            <awayTeam id="24970">
+                <teamName>Thoroughbreds</teamName>
+<score>65</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>104</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8105796" start="2008-09-26T14:00:00Z" type="pl.semifinal">
+            <awayTeam id="26855">
+                <teamName>Hokkaido Rage</teamName>
+<score>62</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>118</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351338" start="2008-09-27T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>58</score>
+            </awayTeam>
+            <homeTeam id="24823">
+                <teamName>BC Törööö</teamName>
+<score>108</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8112153" start="2008-09-30T23:00:00Z" type="cup">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>75</score>
+            </awayTeam>
+            <homeTeam id="24920">
+                <teamName>zero territory</teamName>
+<score>66</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8118863" start="2008-10-02T23:00:00Z" type="cup">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>91</score>
+            </awayTeam>
+            <homeTeam id="25119">
+                <teamName>Kelowna Ballers</teamName>
+<score>61</score>
+            </homeTeam>
+        </match>
+    
+        <match id="8112490" start="2008-10-03T14:00:00Z" type="pl.final">
+            <awayTeam id="34310">
+                <teamName>Olympiakos Gangelt</teamName>
+<score>91</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>135</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351345" start="2008-10-04T23:00:00Z" type="league.rs">
+            <awayTeam id="24867">
+                <teamName>Zanarkand Abes</teamName>
+<score>78</score>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+<score>116</score>
+            </homeTeam>
+        </match>
+    
+        <match id="6351352" start="2008-10-07T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </awayTeam>
+            <homeTeam id="24838">
+                <teamName>North East Point Toastifiers</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="8119692" start="2008-10-09T23:00:00Z" type="cup.semi_or_final">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </awayTeam>
+            <homeTeam id="24824">
+                <teamName>Montréal Rockets</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351363" start="2008-10-11T23:00:00Z" type="league.rs.tv">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </awayTeam>
+            <homeTeam id="25119">
+                <teamName>Kelowna Ballers</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351371" start="2008-10-14T23:00:00Z" type="league.rs">
+            <awayTeam id="24833">
+                <teamName>The Saints Are Coming</teamName>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351379" start="2008-10-18T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </awayTeam>
+            <homeTeam id="24910">
+                <teamName>Firefly</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351387" start="2008-10-21T23:00:00Z" type="league.rs">
+            <awayTeam id="24831">
+                <teamName>Serenity Now!</teamName>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351393" start="2008-10-25T23:00:00Z" type="league.rs">
+            <awayTeam id="24877">
+                <teamName>The Alexander Keiths</teamName>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351400" start="2008-10-28T23:00:00Z" type="league.rs">
+            <awayTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </awayTeam>
+            <homeTeam id="24816">
+                <teamName>New Glasgow Panthers</teamName>
+            </homeTeam>
+        </match>
+    
+        <match id="6351409" start="2008-11-01T23:00:00Z" type="league.rs">
+            <awayTeam id="25046">
+                <teamName>Evergreen Terraceists</teamName>
+            </awayTeam>
+            <homeTeam id="24818">
+                <teamName>Cape Sable Sculpins</teamName>
+            </homeTeam>
+        </match>
+    </schedule>
+</bbapi>

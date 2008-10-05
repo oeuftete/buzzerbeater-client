@@ -1,5 +1,5 @@
 #
-#  $Id: teaminfo.t,v 1.1 2008-10-04 21:04:46 ken Exp $
+#  $Id: teaminfo.t,v 1.2 2008-10-05 19:09:44 ken Exp $
 #
 use strict;
 use warnings;
@@ -19,10 +19,13 @@ my $bb = new BuzzerBeater::Client;
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );
 
-ok( $bb->login($login_params), 'Login successful' );
-
 my $teaminfo;
-isa_ok( $teaminfo = $bb->teaminfo, 'BuzzerBeater::Teaminfo' );
+SKIP: {
+    skip 'Site problems', 2 if $ENV{BB_SITE_PROBLEMS};
+    ok( $bb->login($login_params), 'Login successful' );
+
+    isa_ok( $teaminfo = $bb->teaminfo, 'BuzzerBeater::Teaminfo' );
+}
 
 my $xml_input = read_file('t/files/teaminfo.xml');
 isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
