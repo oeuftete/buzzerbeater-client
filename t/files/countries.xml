@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <countries retrieved="2008-12-27T04:17:06Z">
+        
+        <country id="1" divisions="5" firstSeason="1" users="1809">USA</country>
+        
+        <country id="2" divisions="5" firstSeason="1" users="1128">Argentina</country>
+        
+        <country id="3" divisions="5" firstSeason="1" users="724">Brasil</country>
+        
+        <country id="4" divisions="4" firstSeason="1" users="319">Canada</country>
+        
+        <country id="5" divisions="5" firstSeason="1" users="921">China</country>
+        
+        <country id="6" divisions="5" firstSeason="1" users="1236">Türkiye</country>
+        
+        <country id="7" divisions="6" firstSeason="1" users="5211">España</country>
+        
+        <country id="8" divisions="5" firstSeason="1" users="1067">Deutschland</country>
+        
+        <country id="9" divisions="4" firstSeason="1" users="299">Sverige</country>
+        
+        <country id="10" divisions="6" firstSeason="1" users="3852">Italia</country>
+        
+        <country id="11" divisions="5" firstSeason="1" users="1510">France</country>
+        
+        <country id="12" divisions="5" firstSeason="1" users="954">Hellas</country>
+        
+        <country id="13" divisions="4" firstSeason="2" users="622">België</country>
+        
+        <country id="14" divisions="4" firstSeason="2" users="597">England</country>
+        
+        <country id="15" divisions="5" firstSeason="2" users="1012">Israel</country>
+        
+        <country id="16" divisions="4" firstSeason="2" users="403">Nederland</country>
+        
+        <country id="17" divisions="4" firstSeason="2" users="246">Australia</country>
+        
+        <country id="18" divisions="5" firstSeason="2" users="1216">Portugal</country>
+        
+        <country id="19" divisions="4" firstSeason="2" users="661">Rossiya</country>
+        
+        <country id="20" divisions="5" firstSeason="2" users="1507">Lietuva</country>
+        
+        <country id="21" divisions="5" firstSeason="2" users="549">Chile</country>
+        
+        <country id="22" divisions="4" firstSeason="2" users="158">Colombia</country>
+        
+        <country id="23" divisions="3" firstSeason="2" users="21">Hanguk</country>
+        
+        <country id="24" divisions="4" firstSeason="2" users="578">Hrvatska</country>
+        
+        <country id="25" divisions="2" firstSeason="2" users="30">Nigeria</country>
+        
+        <country id="26" divisions="4" firstSeason="2" users="223">Norge</country>
+        
+        <country id="27" divisions="4" firstSeason="2" users="116">Österreich</country>
+        
+        <country id="28" divisions="4" firstSeason="2" users="392">Schweiz</country>
+        
+        <country id="29" divisions="4" firstSeason="2" users="613">Srbija</country>
+        
+        <country id="30" divisions="4" firstSeason="2" users="156">México</country>
+        
+        <country id="31" divisions="3" firstSeason="3" users="9">Al Jazair</country>
+        
+        <country id="32" divisions="3" firstSeason="3" users="10">Al Maghrib</country>
+        
+        <country id="33" divisions="4" firstSeason="3" users="221">Ukraina</country>
+        
+        <country id="34" divisions="3" firstSeason="3" users="32">Bolivia</country>
+        
+        <country id="35" divisions="4" firstSeason="3" users="495">Bosna i Hercegovina</country>
+        
+        <country id="36" divisions="4" firstSeason="3" users="233">Bulgaria</country>
+        
+        <country id="37" divisions="4" firstSeason="3" users="360">Česká Rep.</country>
+        
+        <country id="38" divisions="2" firstSeason="3" users="20">Costa Rica</country>
+        
+        <country id="39" divisions="4" firstSeason="3" users="216">Danmark</country>
+        
+        <country id="40" divisions="2" firstSeason="3" users="11">Ecuador</country>
+        
+        <country id="41" divisions="4" firstSeason="3" users="1149">Eesti</country>
+        
+        <country id="42" divisions="3" firstSeason="3" users="69">India</country>
+        
+        <country id="43" divisions="3" firstSeason="3" users="138">Indonesia</country>
+        
+        <country id="44" divisions="3" firstSeason="3" users="50">Ireland</country>
+        
+        <country id="45" divisions="3" firstSeason="3" users="182">Hong Kong</country>
+        
+        <country id="46" divisions="4" firstSeason="3" users="755">Latvija</country>
+        
+        <country id="47" divisions="2" firstSeason="3" users="4">Lubnan</country>
+        
+        <country id="48" divisions="4" firstSeason="3" users="859">Magyarország</country>
+        
+        <country id="49" divisions="3" firstSeason="3" users="217">Makedonija</country>
+        
+        <country id="50" divisions="3" firstSeason="3" users="150">Malaysia</country>
+        
+        <country id="51" divisions="2" firstSeason="3" users="25">Misr</country>
+        
+        <country id="52" divisions="3" firstSeason="3" users="36">New Zealand</country>
+        
+        <country id="53" divisions="3" firstSeason="3" users="33">Nippon</country>
+        
+        <country id="54" divisions="3" firstSeason="3" users="39">Panama</country>
+        
+        <country id="55" divisions="2" firstSeason="3" users="31">Paraguay</country>
+        
+        <country id="56" divisions="4" firstSeason="3" users="118">Perú</country>
+        
+        <country id="57" divisions="5" firstSeason="3" users="942">Philippines</country>
+        
+        <country id="58" divisions="5" firstSeason="3" users="2657">Polska</country>
+        
+        <country id="59" divisions="3" firstSeason="3" users="105">Iran</country>
+        
+        <country id="60" divisions="2" firstSeason="3" users="15">Rep. Dominicana</country>
+        
+        <country id="61" divisions="4" firstSeason="3" users="504">România</country>
+        
+        <country id="62" divisions="3" firstSeason="3" users="113">Sakartvelo</country>
+        
+        <country id="63" divisions="3" firstSeason="3" users="21">Saudi Arabia</country>
+        
+        <country id="64" divisions="3" firstSeason="3" users="13">Scotland</country>
+        
+        <country id="65" divisions="3" firstSeason="3" users="75">Singapore</country>
+        
+        <country id="66" divisions="5" firstSeason="3" users="687">Slovenija</country>
+        
+        <country id="67" divisions="4" firstSeason="3" users="363">Slovensko</country>
+        
+        <country id="68" divisions="2" firstSeason="3" users="15">South Africa</country>
+        
+        <country id="69" divisions="5" firstSeason="3" users="822">Suomi</country>
+        
+        <country id="70" divisions="3" firstSeason="3" users="108">Taiwan</country>
+        
+        <country id="71" divisions="2" firstSeason="3" users="15">Tounes</country>
+        
+        <country id="72" divisions="3" firstSeason="3" users="41">Prathet Thai</country>
+        
+        <country id="73" divisions="4" firstSeason="3" users="506">Uruguay</country>
+        
+        <country id="74" divisions="4" firstSeason="3" users="173">Venezuela</country>
+        
+        <country id="75" divisions="3" firstSeason="4" users="26">Andorra</country>
+        
+        <country id="76" divisions="3" firstSeason="4" users="79">Crna Gora</country>
+        
+        <country id="77" divisions="3" firstSeason="4" users="63">Cyprus</country>
+        
+        <country id="78" divisions="3" firstSeason="4" users="94">Ísland</country>
+        
+        <country id="79" divisions="3" firstSeason="4" users="62">Shqipëria</country>
+        
+        <country id="80" divisions="3" firstSeason="4" users="39">Puerto Rico</country>
+        
+        <country id="81" divisions="3" firstSeason="5" users="13">Cymru</country>
+        
+        <country id="82" divisions="2" firstSeason="5" users="18">Guatemala</country>
+        
+        <country id="83" divisions="2" firstSeason="5" users="15">Kazakhstan</country>
+        
+        <country id="84" divisions="2" firstSeason="5" users="20">U.A.E.</country>
+        
+        <country id="85" divisions="3" firstSeason="6" users="49">Byelarus</country>
+        
+        <country id="86" divisions="2" firstSeason="6" users="31">Moldova</country>
+        
+        <country id="87" divisions="2" firstSeason="7" users="8">Hayastan</country>
+        
+        <country id="88" divisions="2" firstSeason="7" users="12">Azərbaycan</country>
+        
+    </countries>
+</bbapi>

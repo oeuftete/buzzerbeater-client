@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.2 2008-10-04 21:04:46 ken Exp $
+#  $Id: Client.pm,v 1.3 2008-12-27 18:21:09 ken Exp $
 #
 
 use strict;
@@ -17,6 +17,7 @@ use Tie::Cycle;
 
 use BuzzerBeater::Arena;
 use BuzzerBeater::Boxscore;
+use BuzzerBeater::Countries;
 use BuzzerBeater::Economy;
 use BuzzerBeater::Player;
 use BuzzerBeater::Roster;
@@ -35,7 +36,8 @@ sub AUTOLOAD {
     our $AUTOLOAD;
     ( my $method = $AUTOLOAD ) =~ s/.*:://s;
 
-    my @autos = qw( arena boxscore economy roster schedule standings teaminfo );
+    my @autos
+        = qw( arena boxscore countries economy roster schedule standings teaminfo );
 
     my $obj;
     if ( grep {/$method/} @autos ) {
@@ -59,9 +61,9 @@ sub new {
 sub _initialize {
     my $self = shift;
 
-    #  TODO: Cycle properly!  For now, I've removed the broken site.
     $self->{apiUrls} = [
-        qw ( http://www2.buzzerbeater.org/BBAPI/ )
+        qw ( http://www.buzzerbeater.com/BBAPI/
+            http://www2.buzzerbeater.org/BBAPI/ )
     ];
 
     tie $self->{apiCycle}, 'Tie::Cycle', [ shuffle @{ $self->{apiUrls} } ];

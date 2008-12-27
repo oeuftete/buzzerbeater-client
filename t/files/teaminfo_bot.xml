@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="24871" retrieved="2008-10-05T19:36:31Z">
+        <teamName>TorRaptors</teamName>
+        <shortName>TOR</shortName>
+        
+        <botTeam/>
+        
+        <league id="130" level="2">II.2</league>
+        <country id="4">Canada</country>
+    </team>
+</bbapi>
