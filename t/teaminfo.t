@@ -1,5 +1,5 @@
 #
-#  $Id: teaminfo.t,v 1.3 2008-10-05 19:45:26 ken Exp $
+#  $Id: teaminfo.t,v 1.4 2009-01-05 05:32:54 ken Exp $
 #
 use strict;
 use warnings;
@@ -31,10 +31,11 @@ my $xml_input = read_file('t/files/teaminfo.xml');
 isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
     'BuzzerBeater::Teaminfo' );
 
-is( $teaminfo->league(),   'Naismith', 'Check league name' );
-is( $teaminfo->leagueid(), 128,        'Check league ID' );
-is( $teaminfo->country(),  'Canada',   'Check country name' );
-is( $teaminfo->owner(),    'oeuftete', 'Check owner' );
+is( $teaminfo->league,    'Naismith', 'Check league name' );
+is( $teaminfo->leagueid,  128,        'Check league ID' );
+is( $teaminfo->country,   'Canada',   'Check country name' );
+is( $teaminfo->owner,     'oeuftete', 'Check owner' );
+is( $teaminfo->shortName, 'CSI',      'Check short name' );
 
 $xml_input = read_file('t/files/teaminfo_bot.xml');
 isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),

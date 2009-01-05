@@ -1,5 +1,5 @@
 #
-#  $Id: Boxscore.pm,v 1.2 2008-10-05 19:09:44 ken Exp $
+#  $Id: Boxscore.pm,v 1.3 2009-01-05 05:32:53 ken Exp $
 #
 
 use strict;
@@ -44,7 +44,7 @@ sub setFromXml {
     my $el   = $root->first_child();
 
     if ( $el->gi ne 'match' ) {
-        carp "Unexpected child element processing roster xml: " . $el->gi;
+        carp "Unexpected child element processing boxscore xml: " . $el->gi;
     }
     return $self;
 }
@@ -65,11 +65,40 @@ sub _parse_team {
     # TODO This is inelegant.
     $team_entry->{offStrategy} = $team->first_child_text('offStrategy');
     $team_entry->{defStrategy} = $team->first_child_text('defStrategy');
+
+    my $totals = $team->first_child('boxscore')->first_child('teamTotals');
+    foreach my $c ( $totals->children ) {
+        $team_entry->{boxscore}->{teamTotals}->{ $c->gi } = $c->text;
+    }
+
+    #  Make the teamTotals structures be accessible either by 'homeTeam'
+    #  and 'awayTeam' or by the two team IDs.
 }
 
-sub id          { my $self = shift; return $self->{id} }
-sub away        { my $self = shift; return $self->{awayTeam} }
-sub home        { my $self = shift; return $self->{homeTeam} }
+sub id   { my $self = shift; return $self->{id} }
+sub away { my $self = shift; return $self->{awayTeam} }
+sub home { my $self = shift; return $self->{homeTeam} }
+
+sub teamTotals {
+    my $self = shift;
+    my $k    = shift;
+
+    croak "homeTeam, awayTeam, or a team id must be specified"
+        if ( !defined($k) );
+
+    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
+    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
+        return $self->{$k}->{boxscore}->{teamTotals};
+    }
+    elsif ( $k == $self->home->{id} ) {
+        return $self->{homeTeam}->{boxscore}->{teamTotals};
+    }
+    elsif ( $k == $self->away->{id} ) {
+        return $self->{awayTeam}->{boxscore}->{teamTotals};
+    }
+    return;
+}
+
 sub effortDelta { my $self = shift; return $self->{effortDelta} }
 
 # TODO: Should this have mappings for the various types?

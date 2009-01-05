@@ -1,5 +1,5 @@
 #
-#  $Id: Teaminfo.pm,v 1.2 2008-10-05 19:45:26 ken Exp $
+#  $Id: Teaminfo.pm,v 1.3 2009-01-05 05:32:53 ken Exp $
 #
 
 use strict;
@@ -51,7 +51,7 @@ sub setFromXml {
 
         my $owner = $el->first_child('owner');
         if ($owner) {
-          $self->{supporter} = $el->first_child('owner')->att('supporter');
+            $self->{supporter} = $el->first_child('owner')->att('supporter');
         }
 
     }
@@ -67,5 +67,6 @@ sub leagueid     { my $self = shift; return $self->{leagueid} }
 sub country      { my $self = shift; return $self->{country} }
 sub is_supporter { my $self = shift; return $self->{supporter} }
 sub owner        { my $self = shift; return $self->{owner} }
+sub shortName    { my $self = shift; return $self->{shortName} }
 
 1;

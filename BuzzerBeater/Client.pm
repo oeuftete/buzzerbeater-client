@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.3 2008-12-27 18:21:09 ken Exp $
+#  $Id: Client.pm,v 1.4 2009-01-05 05:32:53 ken Exp $
 #
 
 use strict;
@@ -24,6 +24,7 @@ use BuzzerBeater::Roster;
 use BuzzerBeater::Schedule;
 use BuzzerBeater::Standings;
 use BuzzerBeater::Teaminfo;
+use BuzzerBeater::Teamstats;
 
 use Data::Dumper;
 $Data::Dumper::Indent = 1;
@@ -36,12 +37,11 @@ sub AUTOLOAD {
     our $AUTOLOAD;
     ( my $method = $AUTOLOAD ) =~ s/.*:://s;
 
-    my @autos
-        = qw( arena boxscore countries economy roster schedule standings teaminfo );
+    my @autos = qw( arena boxscore countries economy roster schedule standings
+        teaminfo teamstats);
 
     my $obj;
     if ( grep {/$method/} @autos ) {
-        ### $method
         $obj = $self->_generic( $method, @_ );
     }
     else {

@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.1 2008-10-05 19:09:44 ken Exp $
+#  $Id: boxscore.t,v 1.2 2009-01-05 05:32:54 ken Exp $
 #
 use strict;
 use warnings;
@@ -37,3 +37,9 @@ is( $boxscore->effortDelta,         0,           'Check effort delta' );
 is( $boxscore->away->{id},          24867,       'Check away team id' );
 is( $boxscore->home->{id},          24818,       'Check home team id' );
 is( $boxscore->home->{offStrategy}, 'Push',      'Check home offStrategy' );
+
+is( $boxscore->teamTotals('homeTeam')->{fga}, 104,
+    'Check a home team total' );
+is( $boxscore->teamTotals(24818)->{fga}, 104, 'Check a team total by ID' );
+is( $boxscore->teamTotals('awayTeam')->{oreb},
+    16, 'Check an away team total' );

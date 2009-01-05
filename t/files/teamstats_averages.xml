@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    
+    <teamStats teamid="24818" season="7" retrieved="2009-01-05T04:16:10Z">
+    
+        <player id="653932">
+            <firstName>Jean-Jacques</firstName>
+            <lastName>Legault</lastName>
+            <stats>
+                <games>3</games>
+                <mpg>20.1</mpg>
+                <fgPerc>46.2</fgPerc>
+                <tpPerc>50</tpPerc>
+                <ftPerc>0</ftPerc>
+                <orpg>2.3</orpg>
+                <rpg>7.3</rpg>
+                <apg>1</apg>
+                <topg>1.3</topg>
+                <spg>0</spg>
+                <bpg>0</bpg>
+                <ppg>4.3</ppg>
+                <fpg>1</fpg>
+                <rating>7.7</rating>
+            </stats>
+        </player>
+    
+        <player id="655588">
+            <firstName>Leopoldo</firstName>
+            <lastName>Amoroso</lastName>
+            <stats>
+                <games>5</games>
+                <mpg>14.2</mpg>
+                <fgPerc>44.7</fgPerc>
+                <tpPerc>41.7</tpPerc>
+                <ftPerc>100</ftPerc>
+                <orpg>0.2</orpg>
+                <rpg>2.4</rpg>
+                <apg>0.4</apg>
+                <topg>0.4</topg>
+                <spg>0.4</spg>
+                <bpg>0.6</bpg>
+                <ppg>8.2</ppg>
+                <fpg>0.8</fpg>
+                <rating>8.7</rating>
+            </stats>
+        </player>
+    
+        <player id="786647">
+            <firstName>Ken</firstName>
+            <lastName>Simons</lastName>
+            <stats>
+                <games>11</games>
+                <mpg>34.7</mpg>
+                <fgPerc>43.3</fgPerc>
+                <tpPerc>33.8</tpPerc>
+                <ftPerc>65.1</ftPerc>
+                <orpg>1.1</orpg>
+                <rpg>3</rpg>
+                <apg>4.2</apg>
+                <topg>0.5</topg>
+                <spg>1.4</spg>
+                <bpg>0.4</bpg>
+                <ppg>21.2</ppg>
+                <fpg>1.5</fpg>
+                <rating>12.8</rating>
+            </stats>
+        </player>
+    
+        <player id="829655">
+            <firstName>William</firstName>
+            <lastName>Colombi</lastName>
+            <stats>
+                <games>11</games>
+                <mpg>32.1</mpg>
+                <fgPerc>41.1</fgPerc>
+                <tpPerc>25</tpPerc>
+                <ftPerc>66.7</ftPerc>
+                <orpg>3.8</orpg>
+                <rpg>11.9</rpg>
+                <apg>1.7</apg>
+                <topg>1.5</topg>
+                <spg>1</spg>
+                <bpg>1.1</bpg>
+                <ppg>12.5</ppg>
+                <fpg>2.8</fpg>
+                <rating>12.5</rating>
+            </stats>
+        </player>
+    
+        <player id="839804">
+            <firstName>Eivydas</firstName>
+            <lastName>Diekontas</lastName>
+            <stats>
+                <games>11</games>
+                <mpg>32.9</mpg>
+                <fgPerc>47.2</fgPerc>
+                <tpPerc>10</tpPerc>
+                <ftPerc>66.7</ftPerc>
+                <orpg>2.9</orpg>
+                <rpg>11.7</rpg>
+                <apg>1.3</apg>
+                <topg>1</topg>
+                <spg>0.9</spg>
+                <bpg>0.8</bpg>
+                <ppg>10.3</ppg>
+                <fpg>1.1</fpg>
+                <rating>13.6</rating>
+            </stats>
+        </player>
+    
+        <player id="2207256">
+            <firstName>Giancarlo</firstName>
+            <lastName>Formicola</lastName>
+            <stats>
+                <games>13</games>
+                <mpg>30.5</mpg>
+                <fgPerc>30.9</fgPerc>
+                <tpPerc>32.1</tpPerc>
+                <ftPerc>65</ftPerc>
+                <orpg>0.8</orpg>
+                <rpg>5</rpg>
+                <apg>1.7</apg>
+                <topg>0.6</topg>
+                <spg>1</spg>
+                <bpg>0.8</bpg>
+                <ppg>6.2</ppg>
+                <fpg>1</fpg>
+                <rating>7.7</rating>
+            </stats>
+        </player>
+    
+        <player id="2326254">
+            <firstName>Roberto</firstName>
+            <lastName>Formento</lastName>
+            <stats>
+                <games>11</games>
+                <mpg>12.5</mpg>
+                <fgPerc>39</fgPerc>
+                <tpPerc>0</tpPerc>
+                <ftPerc>83.3</ftPerc>
+                <orpg>0.9</orpg>
+                <rpg>3.7</rpg>
+                <apg>0.6</apg>
+                <topg>0.7</topg>
+                <spg>0.2</spg>
+                <bpg>0.5</bpg>
+                <ppg>3.4</ppg>
+                <fpg>0.9</fpg>
+                <rating>8.1</rating>
+            </stats>
+        </player>
+    
+        <player id="2418201">
+            <firstName>Deivis</firstName>
+            <lastName>Carrasquel</lastName>
+            <stats>
+                <games>13</games>
+                <mpg>19</mpg>
+                <fgPerc>52.8</fgPerc>
+                <tpPerc>8.3</tpPerc>
+                <ftPerc>61.1</ftPerc>
+                <orpg>1.1</orpg>
+                <rpg>5.7</rpg>
+                <apg>1.7</apg>
+                <topg>0.6</topg>
+                <spg>0.2</spg>
+                <bpg>0</bpg>
+                <ppg>8.2</ppg>
+                <fpg>0.9</fpg>
+                <rating>8.7</rating>
+            </stats>
+        </player>
+    
+        <player id="2563479">
+            <firstName>Miroslaw</firstName>
+            <lastName>Tchorzewski</lastName>
+            <stats>
+                <games>2</games>
+                <mpg>1.3</mpg>
+                <fgPerc>0</fgPerc>
+                <tpPerc>0</tpPerc>
+                <ftPerc>0</ftPerc>
+                <orpg>0</orpg>
+                <rpg>0</rpg>
+                <apg>0</apg>
+                <topg>0</topg>
+                <spg>0</spg>
+                <bpg>0</bpg>
+                <ppg>0</ppg>
+                <fpg>0</fpg>
+                <rating>3</rating>
+            </stats>
+        </player>
+    
+        <player id="2755261">
+            <firstName>David</firstName>
+            <lastName>Pescarmona</lastName>
+            <stats>
+                <games>13</games>
+                <mpg>25.3</mpg>
+                <fgPerc>41.8</fgPerc>
+                <tpPerc>35.7</tpPerc>
+                <ftPerc>60.7</ftPerc>
+                <orpg>1.9</orpg>
+                <rpg>8.3</rpg>
+                <apg>1.5</apg>
+                <topg>1</topg>
+                <spg>0.6</spg>
+                <bpg>1.3</bpg>
+                <ppg>10.7</ppg>
+                <fpg>1.8</fpg>
+                <rating>9.6</rating>
+            </stats>
+        </player>
+    
+        <player id="4607085">
+            <firstName>Ernesto</firstName>
+            <lastName>Cesetti</lastName>
+            <stats>
+                <games>13</games>
+                <mpg>24.2</mpg>
+                <fgPerc>36.4</fgPerc>
+                <tpPerc>28.1</tpPerc>
+                <ftPerc>81.8</ftPerc>
+                <orpg>0.4</orpg>
+                <rpg>2.5</rpg>
+                <apg>3.2</apg>
+                <topg>0.8</topg>
+                <spg>0.5</spg>
+                <bpg>0.8</bpg>
+                <ppg>5.7</ppg>
+                <fpg>1.5</fpg>
+                <rating>9.3</rating>
+            </stats>
+        </player>
+    
+        <player id="4639936">
+            <firstName>Adriano</firstName>
+            <lastName>Fabiano</lastName>
+            <stats>
+                <games>13</games>
+                <mpg>24.8</mpg>
+                <fgPerc>41</fgPerc>
+                <tpPerc>41.4</tpPerc>
+                <ftPerc>71.1</ftPerc>
+                <orpg>1.1</orpg>
+                <rpg>4.1</rpg>
+                <apg>2.5</apg>
+                <topg>0.7</topg>
+                <spg>1.1</spg>
+                <bpg>0.4</bpg>
+                <ppg>8.3</ppg>
+                <fpg>2.5</fpg>
+                <rating>11</rating>
+            </stats>
+        </player>
+    
+        <player id="6045378">
+            <firstName>Avtandil</firstName>
+            <lastName>Gatenashvili</lastName>
+            <stats>
+                <games>11</games>
+                <mpg>12.9</mpg>
+                <fgPerc>50</fgPerc>
+                <tpPerc>14.3</tpPerc>
+                <ftPerc>50</ftPerc>
+                <orpg>0.6</orpg>
+                <rpg>3.5</rpg>
+                <apg>0.3</apg>
+                <topg>0.4</topg>
+                <spg>0.1</spg>
+                <bpg>0.5</bpg>
+                <ppg>4.5</ppg>
+                <fpg>0.9</fpg>
+                <rating>6.9</rating>
+            </stats>
+        </player>
+    
+        
+    
+    </teamStats>
+    
+
+</bbapi>
