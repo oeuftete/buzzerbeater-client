@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.4 2009-01-05 05:32:53 ken Exp $
+#  $Id: Client.pm,v 1.5 2009-03-31 18:41:46 ken Exp $
 #
 
 use strict;
@@ -9,11 +9,13 @@ package BuzzerBeater::Client;
 use base 'LWP::UserAgent';
 
 use Carp;
+
 use List::Util qw( shuffle );
+use Array::Iterator::Circular;
 
 use LWP::UserAgent;
+
 use XML::Twig;
-use Tie::Cycle;
 
 use BuzzerBeater::Arena;
 use BuzzerBeater::Boxscore;
@@ -66,7 +68,8 @@ sub _initialize {
             http://www2.buzzerbeater.org/BBAPI/ )
     ];
 
-    tie $self->{apiCycle}, 'Tie::Cycle', [ shuffle @{ $self->{apiUrls} } ];
+    $self->{apiIterator}
+        = Array::Iterator::Circular->new( shuffle @{ $self->{apiUrls} } );
     $self->_selectSite;
     $self->{lastError} = '';
     $self->{debug}     = 0;
@@ -77,7 +80,7 @@ sub _selectSite {
     my $self = shift;
 
     #  Choose the next URL in the cycle
-    $self->{_apiSite} = $self->{apiCycle};
+    $self->{_apiSite} = $self->{apiIterator}->next;
 }
 
 sub _newRequest {
@@ -102,7 +105,8 @@ sub debug {
     my $self = shift;
 
     if (@_) {
-        $self->{debug} = shift;
+        my $_debug_level = shift;
+        $self->{debug} = $_debug_level;
         return $self;
     }
     else {
@@ -248,7 +252,13 @@ sub _abstractRequest {
         my $response = $self->request($req);
 
         if ( $response->is_success ) {
-            ( $self->debug > 0 ) && printf "%s\n", $response->content;
+
+            if ( $self->debug > 1 ) {
+                printf "%s\n", $response->as_string;
+            }
+            elsif ( $self->debug > 0 ) {
+                printf "%s\n", $response->content;
+            }
 
             if ( $self->debug > 1 ) {
                 open RESPONSE, ">dumps/$method.xml"
@@ -261,6 +271,7 @@ sub _abstractRequest {
         else {
             $self->{lastError}
                 = "Unexpected error: " . $response->status_line;
+            ( $self->debug > 0 ) && printf "%s\n", $response->as_string;
         }
     }
 }
