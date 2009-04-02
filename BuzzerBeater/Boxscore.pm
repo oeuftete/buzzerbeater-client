@@ -1,5 +1,5 @@
 #
-#  $Id: Boxscore.pm,v 1.3 2009-01-05 05:32:53 ken Exp $
+#  $Id: Boxscore.pm,v 1.4 2009-04-02 23:10:44 ken Exp $
 #
 
 use strict;
@@ -71,6 +71,11 @@ sub _parse_team {
         $team_entry->{boxscore}->{teamTotals}->{ $c->gi } = $c->text;
     }
 
+    my $ratings = $team->first_child('ratings');
+    foreach my $r ( $ratings->children ) {
+        $team_entry->{boxscore}->{ratings}->{ $r->gi } = $r->text;
+    }
+
     #  Make the teamTotals structures be accessible either by 'homeTeam'
     #  and 'awayTeam' or by the two team IDs.
 }
@@ -78,6 +83,29 @@ sub _parse_team {
 sub id   { my $self = shift; return $self->{id} }
 sub away { my $self = shift; return $self->{awayTeam} }
 sub home { my $self = shift; return $self->{homeTeam} }
+
+#sub _per_team_getter {
+#    my ($self, $k, $type) = @_;
+#
+#    croak "homeTeam, awayTeam, or a team id must be specified"
+#        if ( !defined($k) );
+#
+#    my %key_map = (
+#       teamTotals =>
+#    );
+#
+#    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
+#    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
+#        return $self->{$k}->{boxscore}->{teamTotals};
+#    }
+#    elsif ( $k == $self->home->{id} ) {
+#        return $self->{homeTeam}->{boxscore}->{teamTotals};
+#    }
+#    elsif ( $k == $self->away->{id} ) {
+#        return $self->{awayTeam}->{boxscore}->{teamTotals};
+#    }
+#    return;
+#}
 
 sub teamTotals {
     my $self = shift;
@@ -97,6 +125,65 @@ sub teamTotals {
         return $self->{awayTeam}->{boxscore}->{teamTotals};
     }
     return;
+}
+
+#  TODO: Factor out similarities with teamTotals!
+sub ratings {
+    my $self = shift;
+    my $k    = shift;
+
+    croak "homeTeam, awayTeam, or a team id must be specified"
+        if ( !defined($k) );
+
+    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
+    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
+        return $self->{$k}->{boxscore}->{ratings};
+    }
+    elsif ( $k == $self->home->{id} ) {
+        return $self->{homeTeam}->{boxscore}->{ratings};
+    }
+    elsif ( $k == $self->away->{id} ) {
+        return $self->{awayTeam}->{boxscore}->{ratings};
+    }
+    return;
+}
+
+#  TODO: Factor out similarities with teamTotals!
+sub bbstat {
+    my $self = shift;
+    my $k    = shift;
+
+    croak "homeTeam, awayTeam, or a team id must be specified"
+        if ( !defined($k) );
+
+    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
+    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
+        return $self->_calculate_bbstat($k);
+    }
+    elsif ( $k == $self->home->{id} ) {
+        return $self->_calculate_bbstat('homeTeam');
+    }
+    elsif ( $k == $self->away->{id} ) {
+        return $self->_calculate_bbstat('awayTeam');
+    }
+    return;
+}
+
+sub _calculate_bbstat {
+    my $self = shift;
+    my $k    = shift;
+
+    my $r = $self->ratings($k);
+
+    my $bbstat = 0;
+    while ( my ( $type, $val ) = each %$r ) {
+        $val =~ s!(\d+)(?:\.([36]))?!
+          3*($1 - 1) + ( defined($2) ? $2/3 + 1 : 1 )
+          !ex;
+        $bbstat += $val;
+    }
+
+    return $bbstat;
 }
 
 sub effortDelta { my $self = shift; return $self->{effortDelta} }

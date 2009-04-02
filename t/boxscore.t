@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.2 2009-01-05 05:32:54 ken Exp $
+#  $Id: boxscore.t,v 1.3 2009-04-02 23:10:44 ken Exp $
 #
 use strict;
 use warnings;
@@ -43,3 +43,10 @@ is( $boxscore->teamTotals('homeTeam')->{fga}, 104,
 is( $boxscore->teamTotals(24818)->{fga}, 104, 'Check a team total by ID' );
 is( $boxscore->teamTotals('awayTeam')->{oreb},
     16, 'Check an away team total' );
+
+is( $boxscore->ratings('homeTeam')->{offensiveFlow},
+    '5.6', 'Check ratings read' );
+
+#  This actually should be 106 on the regular displayed version, but
+#  the offensive flow is rounded differently.
+is( $boxscore->bbstat('homeTeam'), 107, 'Check bbstat calculation' );
