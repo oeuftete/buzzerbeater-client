@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.3 2009-04-02 23:10:44 ken Exp $
+#  $Id: boxscore.t,v 1.4 2009-04-03 22:32:21 ken Exp $
 #
 use strict;
 use warnings;
@@ -19,34 +19,41 @@ my $bb = new BuzzerBeater::Client;
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );
 
-my $boxscore;
+my $box;
 SKIP: {
     skip 'Site problems', 2 if $ENV{BB_SITE_PROBLEMS};
     ok( $bb->login($login_params), 'Login successful' );
 
-    isa_ok( $boxscore = $bb->boxscore, 'BuzzerBeater::Boxscore' );
+    isa_ok( $box = $bb->boxscore, 'BuzzerBeater::Boxscore' );
 }
 
 my $xml_input = read_file('t/files/boxscore.xml');
-isa_ok( $boxscore = $bb->boxscore( { xml => $xml_input } ),
+isa_ok( $box = $bb->boxscore( { xml => $xml_input } ),
     'BuzzerBeater::Boxscore' );
 
-is( $boxscore->id,                  6351345,     'Check match id' );
-is( $boxscore->type,                'league.rs', 'Check match type' );
-is( $boxscore->effortDelta,         0,           'Check effort delta' );
-is( $boxscore->away->{id},          24867,       'Check away team id' );
-is( $boxscore->home->{id},          24818,       'Check home team id' );
-is( $boxscore->home->{offStrategy}, 'Push',      'Check home offStrategy' );
+is( $box->id,                  6351345,     'Check match id' );
+is( $box->type,                'league.rs', 'Check match type' );
+is( $box->effortDelta,         0,           'Check effort delta' );
+is( $box->away->{id},          24867,       'Check away team id' );
+is( $box->home->{id},          24818,       'Check home team id' );
+is( $box->home->{offStrategy}, 'Push',      'Check home offStrategy' );
 
-is( $boxscore->teamTotals('homeTeam')->{fga}, 104,
-    'Check a home team total' );
-is( $boxscore->teamTotals(24818)->{fga}, 104, 'Check a team total by ID' );
-is( $boxscore->teamTotals('awayTeam')->{oreb},
-    16, 'Check an away team total' );
+#  Check the _home_or_away logic
+is( $box->_home_or_away('home')->{offStrategy},
+    'Push', '_home_or_away: home' );
+is( $box->_home_or_away('homeTeam')->{offStrategy},
+    'Push', '_home_or_away: homeTeam' );
+is( $box->_home_or_away(24818)->{offStrategy},
+    'Push', '_home_or_away: by ID' );
+is( $box->_home_or_away('foo'),
+    undef, '_home_or_away: garbage returns undef' );
 
-is( $boxscore->ratings('homeTeam')->{offensiveFlow},
-    '5.6', 'Check ratings read' );
+is( $box->teamTotals('homeTeam')->{fga},  104, 'Check a home team total' );
+is( $box->teamTotals(24818)->{fga},       104, 'Check a team total by ID' );
+is( $box->teamTotals('awayTeam')->{oreb}, 16,  'Check an away team total' );
+
+is( $box->ratings('homeTeam')->{offensiveFlow}, '5.6', 'Check ratings read' );
 
 #  This actually should be 106 on the regular displayed version, but
-#  the offensive flow is rounded differently.
-is( $boxscore->bbstat('homeTeam'), 107, 'Check bbstat calculation' );
+#  the offensive flow is rounded differently in the API version.
+is( $box->bbstat('homeTeam'), 107, 'Check bbstat calculation' );

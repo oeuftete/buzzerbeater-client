@@ -1,11 +1,15 @@
 #
-#  $Id: Boxscore.pm,v 1.4 2009-04-02 23:10:44 ken Exp $
+#  $Id: Boxscore.pm,v 1.5 2009-04-03 22:32:21 ken Exp $
 #
+
+require 5.10.0;
 
 use strict;
 use warnings;
 
 package BuzzerBeater::Boxscore;
+
+use feature 'switch';
 
 use XML::Twig;
 use Carp;
@@ -76,102 +80,47 @@ sub _parse_team {
         $team_entry->{boxscore}->{ratings}->{ $r->gi } = $r->text;
     }
 
-    #  Make the teamTotals structures be accessible either by 'homeTeam'
-    #  and 'awayTeam' or by the two team IDs.
+    #  Make the teamTotals structures be accessible either by 'homeTeam' and
+    #  'awayTeam' or by the two team IDs.
 }
 
 sub id   { my $self = shift; return $self->{id} }
 sub away { my $self = shift; return $self->{awayTeam} }
 sub home { my $self = shift; return $self->{homeTeam} }
 
-#sub _per_team_getter {
-#    my ($self, $k, $type) = @_;
-#
-#    croak "homeTeam, awayTeam, or a team id must be specified"
-#        if ( !defined($k) );
-#
-#    my %key_map = (
-#       teamTotals =>
-#    );
-#
-#    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
-#    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
-#        return $self->{$k}->{boxscore}->{teamTotals};
-#    }
-#    elsif ( $k == $self->home->{id} ) {
-#        return $self->{homeTeam}->{boxscore}->{teamTotals};
-#    }
-#    elsif ( $k == $self->away->{id} ) {
-#        return $self->{awayTeam}->{boxscore}->{teamTotals};
-#    }
-#    return;
-#}
+#  Return $self->away or $self->home based on a few different tests.
+sub _home_or_away {
+    my ( $self, $k ) = @_;
+
+    given ($k) {
+        when (/^home(?:Team)?/)    { return $self->home; }
+        when (/^away(?:Team)?/)    { return $self->away; }
+        when ( $self->home->{id} ) { return $self->home; }
+        when ( $self->away->{id} ) { return $self->away; }
+    }
+    return;
+}
 
 sub teamTotals {
-    my $self = shift;
-    my $k    = shift;
+    my ( $self, $k ) = @_;
 
-    croak "homeTeam, awayTeam, or a team id must be specified"
-        if ( !defined($k) );
+    my $team = $self->_home_or_away($k)
+        or croak "Unable to determine teamTotals for team [$k]";
 
-    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
-    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
-        return $self->{$k}->{boxscore}->{teamTotals};
-    }
-    elsif ( $k == $self->home->{id} ) {
-        return $self->{homeTeam}->{boxscore}->{teamTotals};
-    }
-    elsif ( $k == $self->away->{id} ) {
-        return $self->{awayTeam}->{boxscore}->{teamTotals};
-    }
-    return;
+    return $team->{boxscore}->{teamTotals};
 }
 
-#  TODO: Factor out similarities with teamTotals!
 sub ratings {
-    my $self = shift;
-    my $k    = shift;
+    my ( $self, $k ) = @_;
 
-    croak "homeTeam, awayTeam, or a team id must be specified"
-        if ( !defined($k) );
+    my $team = $self->_home_or_away($k)
+        or croak "Unable to determine ratings for team [$k]";
 
-    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
-    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
-        return $self->{$k}->{boxscore}->{ratings};
-    }
-    elsif ( $k == $self->home->{id} ) {
-        return $self->{homeTeam}->{boxscore}->{ratings};
-    }
-    elsif ( $k == $self->away->{id} ) {
-        return $self->{awayTeam}->{boxscore}->{ratings};
-    }
-    return;
+    return $team->{boxscore}->{ratings};
 }
 
-#  TODO: Factor out similarities with teamTotals!
 sub bbstat {
-    my $self = shift;
-    my $k    = shift;
-
-    croak "homeTeam, awayTeam, or a team id must be specified"
-        if ( !defined($k) );
-
-    #  The user can ask for 'homeTeam' or 'awayTeam' or a team ID.
-    if ( $k eq 'homeTeam' || $k eq 'awayTeam' ) {
-        return $self->_calculate_bbstat($k);
-    }
-    elsif ( $k == $self->home->{id} ) {
-        return $self->_calculate_bbstat('homeTeam');
-    }
-    elsif ( $k == $self->away->{id} ) {
-        return $self->_calculate_bbstat('awayTeam');
-    }
-    return;
-}
-
-sub _calculate_bbstat {
-    my $self = shift;
-    my $k    = shift;
+    my ( $self, $k ) = @_;
 
     my $r = $self->ratings($k);
 
