@@ -1,5 +1,5 @@
 #
-#  $Id: Boxscore.pm,v 1.5 2009-04-03 22:32:21 ken Exp $
+#  $Id: Boxscore.pm,v 1.6 2009-04-04 01:15:29 ken Exp $
 #
 
 require 5.10.0;
@@ -13,6 +13,8 @@ use feature 'switch';
 
 use XML::Twig;
 use Carp;
+
+use BuzzerBeater::Common::Utils qw(is_match_type);
 
 sub new {
     my $class = shift;
@@ -139,6 +141,11 @@ sub effortDelta { my $self = shift; return $self->{effortDelta} }
 
 # TODO: Should this have mappings for the various types?
 sub type { my $self = shift; return $self->{type} }
+
+sub is_competitive {
+    my $self = shift;
+    return is_match_type( $self->type, 'competitive' );
+}
 
 #  Searches for players by id or name.
 

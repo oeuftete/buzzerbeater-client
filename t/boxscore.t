@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.4 2009-04-03 22:32:21 ken Exp $
+#  $Id: boxscore.t,v 1.5 2009-04-04 01:15:29 ken Exp $
 #
 use strict;
 use warnings;
@@ -14,7 +14,7 @@ my $access_code  = 'alphonse';
 my $agent        = 'oeuftete-test-app/0.1';
 my $login_params = { params => { login => $user, code => $access_code } };
 
-my $bb = new BuzzerBeater::Client;
+my $bb = BuzzerBeater::Client->new;
 
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );
@@ -37,6 +37,8 @@ is( $box->effortDelta,         0,           'Check effort delta' );
 is( $box->away->{id},          24867,       'Check away team id' );
 is( $box->home->{id},          24818,       'Check home team id' );
 is( $box->home->{offStrategy}, 'Push',      'Check home offStrategy' );
+
+ok( $box->is_competitive, 'This is a competitive match' );
 
 #  Check the _home_or_away logic
 is( $box->_home_or_away('home')->{offStrategy},

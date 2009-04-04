@@ -1,5 +1,5 @@
 #
-#  $Id: Schedule.pm,v 1.2 2008-10-05 19:09:44 ken Exp $
+#  $Id: Schedule.pm,v 1.3 2009-04-04 01:15:29 ken Exp $
 #
 
 use strict;
@@ -9,6 +9,8 @@ package BuzzerBeater::Schedule;
 
 use XML::Twig;
 use Carp;
+
+use BuzzerBeater::Common::Utils qw(is_match_type);
 
 sub new {
     my $class = shift;
@@ -91,31 +93,9 @@ sub matches {
 
     my @m = @{ $self->{matches} };
 
-    #  Filter by type if asked.
-    my %type_grep = (
-        friendly => sub { $_->{type} eq 'friendly' },
-        bbb    => sub { $_->{type} =~ m/^bbb/ },
-        league => sub { $_->{type} =~ m/^league/ },
-        cup    => sub { $_->{type} =~ m/^cup/ },
-        pl     => sub { $_->{type} =~ m/^pl/ },
-    );
-
-    $type_grep{competitive} = sub {
-        $type_grep{bbb}->($_)
-            || $type_grep{league}->($_)
-            || $type_grep{cup}->($_);
-    };
-
     if ( exists( $params->{type} ) ) {
-        if ( exists( $type_grep{ $params->{type} } ) ) {
-            my @_temp = grep { $type_grep{ $params->{type} }->($_) } @m;
-            @m = @_temp;
-        }
-        else {
-            carp 'Bad match type filter ['
-                . $params->{type}
-                . ']!  Type ignored';
-        }
+        my @_temp = grep { is_match_type( $_->{type}, $params->{type} ) } @m;
+        @m = @_temp;
     }
 
     #  Filter only completed games if asked.
