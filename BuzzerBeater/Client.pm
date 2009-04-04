@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.5 2009-03-31 18:41:46 ken Exp $
+#  $Id: Client.pm,v 1.6 2009-04-04 14:18:54 ken Exp $
 #
 
 use strict;
@@ -39,7 +39,8 @@ sub AUTOLOAD {
     our $AUTOLOAD;
     ( my $method = $AUTOLOAD ) =~ s/.*:://s;
 
-    my @autos = qw( arena boxscore countries economy roster schedule standings
+    my @autos
+        = qw( arena boxscore countries economy player roster schedule standings
         teaminfo teamstats);
 
     my $obj;
@@ -123,6 +124,7 @@ sub _setErrorFromXml {
 #
 # API functions
 #
+# TODO Login and logout really should be abstractable a bit more.
 
 ########################################################################
 #
@@ -156,7 +158,7 @@ sub login {
             close RESPONSE;
         }
 
-        my $twig = new XML::Twig(
+        my $twig = XML::Twig->new(
             TwigRoots => {
                 loggedIn => sub { $loggedIn = 1 },
                 error => sub { $self->_setErrorFromXml(@_) }
@@ -196,7 +198,7 @@ sub logout {
             close RESPONSE;
         }
 
-        my $twig = new XML::Twig(
+        my $twig = XML::Twig->new(
             TwigRoots => {
                 loggedOut => sub { $loggedOut = 1 },
                 error => sub { $self->_setErrorFromXml(@_) }
