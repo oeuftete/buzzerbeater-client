@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <economy retrieved="2009-01-11T22:49:01Z">
+        <lastWeek start="2008-12-29T08:00:01Z">
+            <initial>2376202</initial>
+            
+                <playerSalaries date="2008-12-29T08:00:01Z">-211542</playerSalaries>
+            
+                <staffSalaries date="2008-12-29T08:00:15Z">-58845</staffSalaries>
+            
+                <scouting date="2008-12-29T08:00:15Z">0</scouting>
+            
+                <interest date="2008-12-29T08:00:16Z">0</interest>
+            
+                <merchandise date="2008-12-29T08:00:17Z">59747</merchandise>
+            
+                <tvMoney date="2008-12-29T08:00:17Z">35000</tvMoney>
+            
+                <matchRevenue matchid="8440607" date="2008-12-31T00:40:18Z">334017</matchRevenue>
+            
+                <matchRevenue matchid="10320220" date="2009-01-01T23:45:11Z">60000</matchRevenue>
+            
+                <matchRevenue matchid="10248650" date="2009-01-02T07:45:53Z">0</matchRevenue>
+            
+                <matchRevenue matchid="8440614" date="2009-01-03T23:45:53Z">0</matchRevenue>
+            
+            <final>2594579</final>
+        </lastWeek>
+        <thisWeek start="2009-01-05T08:00:06Z">
+            <initial>2594579</initial>
+            
+                <playerSalaries date="2009-01-05T08:00:06Z">-211542</playerSalaries>
+            
+                <staffSalaries date="2009-01-05T08:00:13Z">-59976</staffSalaries>
+            
+                <scouting date="2009-01-05T08:00:13Z">0</scouting>
+            
+                <interest date="2009-01-05T08:00:13Z">0</interest>
+            
+                <merchandise date="2009-01-05T08:00:14Z">60672</merchandise>
+            
+                <tvMoney date="2009-01-05T08:00:14Z">35000</tvMoney>
+            
+                <matchRevenue matchid="10328087" date="2009-01-06T23:45:09Z">70000</matchRevenue>
+            
+                <matchRevenue matchid="10335700" date="2009-01-08T23:46:09Z">90000</matchRevenue>
+            
+                <matchRevenue matchid="10248657" date="2009-01-09T07:46:17Z">0</matchRevenue>
+            
+                <matchRevenue matchid="8440629" date="2009-01-10T23:46:54Z">324480</matchRevenue>
+            
+            <current>2903213</current>
+        </thisWeek>
+    </economy>
+</bbapi>
