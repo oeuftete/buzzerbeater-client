@@ -1,5 +1,5 @@
 #
-#  $Id: Player.pm,v 1.2 2009-04-04 12:47:50 ken Exp $
+#  $Id: Player.pm,v 1.3 2009-04-04 14:19:18 ken Exp $
 #
 
 use strict;
@@ -42,7 +42,7 @@ sub setFromXml {
     my $self = shift;
     my $xml  = shift;
 
-    my $twig = new XML::Twig;
+    my $twig = XML::Twig->new();
     $twig->parse($xml);    # safe_parse or croak?
 
     my $root = $twig->root;

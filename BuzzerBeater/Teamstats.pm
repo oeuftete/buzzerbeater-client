@@ -1,5 +1,5 @@
 #
-#  $Id: Teamstats.pm,v 1.1 2009-01-05 05:32:53 ken Exp $
+#  $Id: Teamstats.pm,v 1.2 2009-04-04 14:19:18 ken Exp $
 #
 
 use strict;
@@ -31,7 +31,7 @@ sub setFromXml {
     my $self = shift;
     my $xml  = shift;
 
-    my $twig = new XML::Twig(
+    my $twig = XML::Twig->new(
         twig_handlers => {
             teamStats  => sub { _parse_averages( $self, @_ ) },
             teamTotals => sub { _parse_totals( $self,   @_ ) },

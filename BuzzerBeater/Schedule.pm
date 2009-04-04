@@ -1,5 +1,5 @@
 #
-#  $Id: Schedule.pm,v 1.3 2009-04-04 01:15:29 ken Exp $
+#  $Id: Schedule.pm,v 1.4 2009-04-04 14:19:18 ken Exp $
 #
 
 use strict;
@@ -34,7 +34,7 @@ sub setFromXml {
     my $self = shift;
     my $xml  = shift;
 
-    my $twig = new XML::Twig(
+    my $twig = XML::Twig->new(
         twig_handlers => {
             schedule => sub { _parse_schedule( $self, @_ ) },
             match    => sub { _parse_match( $self,    @_ ) },

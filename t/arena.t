@@ -12,7 +12,7 @@ my $access_code  = 'alphonse';
 my $agent        = 'oeuftete-test-app/0.1';
 my $login_params = { params => { login => $user, code => $access_code } };
 
-my $bb = new BuzzerBeater::Client;
+my $bb = BuzzerBeater::Client->new;
 
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );

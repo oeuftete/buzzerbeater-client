@@ -1,5 +1,5 @@
 #
-#  $Id: Boxscore.pm,v 1.7 2009-04-04 02:53:58 ken Exp $
+#  $Id: Boxscore.pm,v 1.8 2009-04-04 14:19:17 ken Exp $
 #
 
 require 5.10.0;
@@ -37,7 +37,7 @@ sub setFromXml {
     my $self = shift;
     my $xml  = shift;
 
-    my $twig = new XML::Twig(
+    my $twig = XML::Twig->new(
         twig_handlers => {
             match    => sub { _parse_match( $self, @_ ) },
             awayTeam => sub { _parse_team( $self,  @_ ) },

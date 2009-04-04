@@ -1,5 +1,5 @@
 #
-#  $Id: Arena.pm,v 1.2 2008-10-05 19:09:44 ken Exp $
+#  $Id: Arena.pm,v 1.3 2009-04-04 14:19:17 ken Exp $
 #
 
 use strict;
@@ -31,7 +31,7 @@ sub setFromXml {
     my $self = shift;
     my $xml  = shift;
 
-    my $twig = new XML::Twig;
+    my $twig = XML::Twig->new();
     $twig->parse($xml);    # safe_parse or croak?
 
     my $root = $twig->root;

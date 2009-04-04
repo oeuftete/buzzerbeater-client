@@ -1,5 +1,5 @@
 #
-#  $Id: Countries.pm,v 1.1 2008-12-27 18:21:09 ken Exp $
+#  $Id: Countries.pm,v 1.2 2009-04-04 14:19:17 ken Exp $
 #
 
 use strict;
@@ -36,7 +36,7 @@ sub setFromXml {
 
     my %c;
 
-    my $twig = new XML::Twig;
+    my $twig = XML::Twig->new();
     $twig->parse($xml);    # safe_parse or croak?
 
     my $root = $twig->root;

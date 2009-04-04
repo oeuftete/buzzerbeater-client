@@ -1,5 +1,5 @@
 #
-#  $Id: schedule.t,v 1.1 2008-10-05 19:09:44 ken Exp $
+#  $Id: schedule.t,v 1.2 2009-04-04 14:19:18 ken Exp $
 #
 use strict;
 use warnings;
@@ -14,7 +14,7 @@ my $access_code  = 'alphonse';
 my $agent        = 'oeuftete-test-app/0.1';
 my $login_params = { params => { login => $user, code => $access_code } };
 
-my $bb = new BuzzerBeater::Client;
+my $bb = BuzzerBeater::Client->new;
 
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );
