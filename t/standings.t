@@ -12,7 +12,7 @@ my $access_code  = 'alphonse';
 my $agent        = 'oeuftete-test-app/0.1';
 my $login_params = { params => { login => $user, code => $access_code } };
 
-my $bb = new BuzzerBeater::Client;
+my $bb = BuzzerBeater::Client->new();
 
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );
@@ -28,8 +28,8 @@ SKIP: {
 my $xml_input = read_file('t/files/standings.xml');
 isa_ok( $standings = $bb->standings( { xml => $xml_input } ),
     'BuzzerBeater::Standings' );
-is( $standings->league(),  'Naismith', 'Check league name' );
-is( $standings->country(), 'Canada',   'Check country name' );
+is( $standings->league,  'Naismith', 'Check league name' );
+is( $standings->country, 'Canada',   'Check country name' );
 
 my $team_standings;
 isa_ok( $team_standings = $standings->team(24818), 'HASH' );

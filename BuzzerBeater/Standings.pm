@@ -1,5 +1,5 @@
 #
-#  $Id: Standings.pm,v 1.2 2008-10-04 21:04:46 ken Exp $
+#  $Id: Standings.pm,v 1.3 2009-04-04 13:02:52 ken Exp $
 #
 
 use strict;
@@ -32,7 +32,7 @@ sub setFromXml {
     my $self = shift;
     my $xml  = shift;
 
-    my $twig = new XML::Twig;
+    my $twig = XML::Twig->new();
     $twig->parse($xml);    # safe_parse or croak?
 
     my $root = $twig->root;
@@ -40,8 +40,8 @@ sub setFromXml {
 
     if ( $el->gi eq 'standings' ) {
         $self->{season}  = $el->att('season');
-        $self->{league}  = encode_utf8($el->first_child_text('league'));
-        $self->{country} = encode_utf8($el->first_child_text('country'));
+        $self->{league}  = encode_utf8( $el->first_child_text('league') );
+        $self->{country} = encode_utf8( $el->first_child_text('country') );
 
         my $regular_season = $el->first_child('regularSeason');
 
@@ -61,8 +61,8 @@ sub setFromXml {
                 $place_counter++;
 
                 foreach my $team_in_conf_data ( $team_in_conf->children ) {
-                    $t->{ $team_in_conf_data->gi } =
-                    encode_utf8($team_in_conf_data->text);
+                    $t->{ $team_in_conf_data->gi }
+                        = encode_utf8( $team_in_conf_data->text );
                 }
                 push @team_standings, $t;
             }
@@ -90,7 +90,8 @@ sub team {
     return;
 }
 
-sub league  { my $self = shift; return $self->{league} }
-sub country { my $self = shift; return $self->{country} }
+sub league     { my $self = shift; return $self->{league} }
+sub conference { my $self = shift; return $self->{conference} }
+sub country    { my $self = shift; return $self->{country} }
 
 1;
