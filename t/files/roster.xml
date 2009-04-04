@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <roster teamid="24818" retrieved="2009-01-12T02:30:23Z">
+        <player id="786647">
+            <firstName>Ken</firstName>
+            <lastName>Simons</lastName>
+            <nationality id="1">USA</nationality>
+            <age>23</age>
+            <height>71</height>
+            <dmi>244200</dmi>
+            
+            <jersey>1</jersey>
+            <salary>42505</salary>
+            <bestPosition>SG</bestPosition>
+            <skills>
+                <gameShape>8</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>15</jumpShot>
+                <range>11</range>
+                <outsideDef>13</outsideDef>
+                <handling>9</handling>
+                <driving>10</driving>
+                <passing>12</passing>
+                <insideShot>1</insideShot>
+                <insideDef>3</insideDef>
+                <rebound>1</rebound>
+                <block>3</block>
+                <stamina>4</stamina>
+                <freeThrow>7</freeThrow>
+                <experience>8</experience>
+                
+            </skills>
+        </player>
+        <player id="4639936">
+            <firstName>Adriano</firstName>
+            <lastName>Fabiano</lastName>
+            <nationality id="10">Italia</nationality>
+            <age>20</age>
+            <height>74</height>
+            <dmi>128100</dmi>
+            
+            <jersey>2</jersey>
+            <salary>23778</salary>
+            <bestPosition>SG</bestPosition>
+            <skills>
+                <gameShape>8</gameShape>
+                <potential>7</potential>
+                
+                <jumpShot>12</jumpShot>
+                <range>8</range>
+                <outsideDef pop="+1">13</outsideDef>
+                <handling>9</handling>
+                <driving>7</driving>
+                <passing>11</passing>
+                <insideShot>1</insideShot>
+                <insideDef>6</insideDef>
+                <rebound>7</rebound>
+                <block>4</block>
+                <stamina>3</stamina>
+                <freeThrow>6</freeThrow>
+                <experience>3</experience>
+                
+            </skills>
+        </player>
+        <player id="4607085">
+            <firstName>Ernesto</firstName>
+            <lastName>Cesetti</lastName>
+            <nationality id="10">Italia</nationality>
+            <age>20</age>
+            <height>74</height>
+            <dmi>46500</dmi>
+            
+            <jersey>3</jersey>
+            <salary>11576</salary>
+            <bestPosition>SG</bestPosition>
+            <skills>
+                <gameShape>7</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>10</jumpShot>
+                <range>8</range>
+                <outsideDef pop="+1">12</outsideDef>
+                <handling>7</handling>
+                <driving>4</driving>
+                <passing>10</passing>
+                <insideShot>4</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>2</rebound>
+                <block>6</block>
+                <stamina>4</stamina>
+                <freeThrow>7</freeThrow>
+                <experience>2</experience>
+                
+            </skills>
+        </player>
+        <player id="829655">
+            <firstName>William</firstName>
+            <lastName>Colombi</lastName>
+            <nationality id="10">Italia</nationality>
+            <age>22</age>
+            <height>83</height>
+            <dmi>156600</dmi>
+            
+            <jersey>4</jersey>
+            <salary>34688</salary>
+            <bestPosition>PF</bestPosition>
+            <skills>
+                <gameShape>8</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>9</jumpShot>
+                <range>3</range>
+                <outsideDef>6</outsideDef>
+                <handling>7</handling>
+                <driving>5</driving>
+                <passing>4</passing>
+                <insideShot>10</insideShot>
+                <insideDef>11</insideDef>
+                <rebound>13</rebound>
+                <block>9</block>
+                <stamina>7</stamina>
+                <freeThrow>8</freeThrow>
+                <experience>8</experience>
+                
+            </skills>
+        </player>
+        <player id="839804">
+            <firstName>Eivydas</firstName>
+            <lastName>Diekontas</lastName>
+            <nationality id="20">Lietuva</nationality>
+            <age>23</age>
+            <height>81</height>
+            <dmi>413500</dmi>
+            
+            <jersey>5</jersey>
+            <salary>42490</salary>
+            <bestPosition>C</bestPosition>
+            <skills>
+                <gameShape>9</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>7</jumpShot>
+                <range>2</range>
+                <outsideDef>7</outsideDef>
+                <handling>1</handling>
+                <driving>6</driving>
+                <passing>4</passing>
+                <insideShot>11</insideShot>
+                <insideDef>12</insideDef>
+                <rebound>13</rebound>
+                <block>7</block>
+                <stamina>6</stamina>
+                <freeThrow>5</freeThrow>
+                <experience>5</experience>
+                
+            </skills>
+        </player>
+        <player id="2755261">
+            <firstName>David</firstName>
+            <lastName>Pescarmona</lastName>
+            <nationality id="10">Italia</nationality>
+            <age>24</age>
+            <height>83</height>
+            <dmi>104600</dmi>
+            
+            <jersey>7</jersey>
+            <salary>11400</salary>
+            <bestPosition>SF</bestPosition>
+            <skills>
+                <gameShape>9</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>10</jumpShot>
+                <range>7</range>
+                <outsideDef>5</outsideDef>
+                <handling>7</handling>
+                <driving>3</driving>
+                <passing>5</passing>
+                <insideShot>8</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>7</rebound>
+                <block>5</block>
+                <stamina>6</stamina>
+                <freeThrow>3</freeThrow>
+                <experience>3</experience>
+                
+            </skills>
+        </player>
+        <player id="2418201">
+            <firstName>Deivis</firstName>
+            <lastName>Carrasquel</lastName>
+            <nationality id="74">Venezuela</nationality>
+            <age>23</age>
+            <height>80</height>
+            <dmi>91200</dmi>
+            
+            <jersey>8</jersey>
+            <salary>9027</salary>
+            <bestPosition>PF</bestPosition>
+            <skills>
+                <gameShape>9</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>9</jumpShot>
+                <range>5</range>
+                <outsideDef>6</outsideDef>
+                <handling>5</handling>
+                <driving>3</driving>
+                <passing>7</passing>
+                <insideShot>11</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>6</rebound>
+                <block>2</block>
+                <stamina>6</stamina>
+                <freeThrow>7</freeThrow>
+                <experience>5</experience>
+                
+            </skills>
+        </player>
+        <player id="6045378">
+            <firstName>Avtandil</firstName>
+            <lastName>Gatenashvili</lastName>
+            <nationality id="62">Sakartvelo</nationality>
+            <age>19</age>
+            <height>78</height>
+            <dmi>62400</dmi>
+            
+            <jersey>9</jersey>
+            <salary>7930</salary>
+            <bestPosition>PF</bestPosition>
+            <skills>
+                <gameShape>8</gameShape>
+                <potential>8</potential>
+                
+                <jumpShot>6</jumpShot>
+                <range>7</range>
+                <outsideDef>7</outsideDef>
+                <handling>1</handling>
+                <driving>4</driving>
+                <passing>6</passing>
+                <insideShot>9</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>6</rebound>
+                <block>6</block>
+                <stamina>6</stamina>
+                <freeThrow>2</freeThrow>
+                <experience>2</experience>
+                
+            </skills>
+        </player>
+        <player id="2326254">
+            <firstName>Roberto</firstName>
+            <lastName>Formento</lastName>
+            <nationality id="73">Uruguay</nationality>
+            <age>25</age>
+            <height>78</height>
+            <dmi>72400</dmi>
+            
+            <jersey>10</jersey>
+            <salary>8491</salary>
+            <bestPosition>SF</bestPosition>
+            <skills>
+                <gameShape>9</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>9</jumpShot>
+                <range>4</range>
+                <outsideDef>7</outsideDef>
+                <handling>7</handling>
+                <driving>4</driving>
+                <passing>6</passing>
+                <insideShot>4</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>7</rebound>
+                <block>6</block>
+                <stamina>4</stamina>
+                <freeThrow>3</freeThrow>
+                <experience>4</experience>
+                
+            </skills>
+        </player>
+        <player id="2207256">
+            <firstName>Giancarlo</firstName>
+            <lastName>Formicola</lastName>
+            <nationality id="10">Italia</nationality>
+            <age>23</age>
+            <height>73</height>
+            <dmi>39200</dmi>
+            
+            <jersey>11</jersey>
+            <salary>11310</salary>
+            <bestPosition>SF</bestPosition>
+            <skills>
+                <gameShape>7</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>9</jumpShot>
+                <range>7</range>
+                <outsideDef>9</outsideDef>
+                <handling>7</handling>
+                <driving>5</driving>
+                <passing>6</passing>
+                <insideShot>2</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>6</rebound>
+                <block>4</block>
+                <stamina>5</stamina>
+                <freeThrow>4</freeThrow>
+                <experience>4</experience>
+                
+            </skills>
+        </player>
+        <player id="653932">
+            <firstName>Jean-Jacques</firstName>
+            <lastName>Legault</lastName>
+            <nationality id="4">Canada</nationality>
+            <age>27</age>
+            <height>79</height>
+            <dmi>16300</dmi>
+            
+            <jersey>28</jersey>
+            <salary>5061</salary>
+            <bestPosition>C</bestPosition>
+            <skills>
+                <gameShape>7</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>4</jumpShot>
+                <range>1</range>
+                <outsideDef>5</outsideDef>
+                <handling>1</handling>
+                <driving>3</driving>
+                <passing>6</passing>
+                <insideShot>7</insideShot>
+                <insideDef>6</insideDef>
+                <rebound>7</rebound>
+                <block>5</block>
+                <stamina>6</stamina>
+                <freeThrow>9</freeThrow>
+                <experience>7</experience>
+                
+            </skills>
+        </player>
+        <player id="2563479">
+            <firstName>Miroslaw</firstName>
+            <lastName>Tchorzewski</lastName>
+            <nationality id="58">Polska</nationality>
+            <age>29</age>
+            <height>82</height>
+            <dmi>4500</dmi>
+            
+            <jersey>49</jersey>
+            <salary>3286</salary>
+            <bestPosition>C</bestPosition>
+            <skills>
+                <gameShape>4</gameShape>
+                <potential>6</potential>
+                
+                <jumpShot>4</jumpShot>
+                <range>4</range>
+                <outsideDef>4</outsideDef>
+                <handling>7</handling>
+                <driving>4</driving>
+                <passing>2</passing>
+                <insideShot>5</insideShot>
+                <insideDef>8</insideDef>
+                <rebound>5</rebound>
+                <block>2</block>
+                <stamina>3</stamina>
+                <freeThrow>1</freeThrow>
+                <experience>4</experience>
+                
+            </skills>
+        </player>
+    </roster>
+</bbapi>
