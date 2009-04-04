@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.5 2009-04-04 01:15:29 ken Exp $
+#  $Id: boxscore.t,v 1.6 2009-04-04 02:53:58 ken Exp $
 #
 use strict;
 use warnings;
@@ -37,6 +37,8 @@ is( $box->effortDelta,         0,           'Check effort delta' );
 is( $box->away->{id},          24867,       'Check away team id' );
 is( $box->home->{id},          24818,       'Check home team id' );
 is( $box->home->{offStrategy}, 'Push',      'Check home offStrategy' );
+is( $box->home->{teamName}, 'Cape Sable Sculpins', 'Check home team name' );
+is( $box->home->{shortName}, 'CSI', 'Check home short name' );
 
 ok( $box->is_competitive, 'This is a competitive match' );
 
@@ -49,6 +51,9 @@ is( $box->_home_or_away(24818)->{offStrategy},
     'Push', '_home_or_away: by ID' );
 is( $box->_home_or_away('foo'),
     undef, '_home_or_away: garbage returns undef' );
+
+is( $box->opponent(24818)->{id},  24867, 'Opponent by id' );
+is( $box->opponent('home')->{id}, 24867, 'Opponent by not the home team' );
 
 is( $box->teamTotals('homeTeam')->{fga},  104, 'Check a home team total' );
 is( $box->teamTotals(24818)->{fga},       104, 'Check a team total by ID' );

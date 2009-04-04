@@ -1,5 +1,5 @@
 #
-#  $Id: Boxscore.pm,v 1.6 2009-04-04 01:15:29 ken Exp $
+#  $Id: Boxscore.pm,v 1.7 2009-04-04 02:53:58 ken Exp $
 #
 
 require 5.10.0;
@@ -68,9 +68,9 @@ sub _parse_team {
 
     $team_entry->{id} = $team->att('id');
 
-    # TODO This is inelegant.
-    $team_entry->{offStrategy} = $team->first_child_text('offStrategy');
-    $team_entry->{defStrategy} = $team->first_child_text('defStrategy');
+    foreach my $top_child (qw(offStrategy defStrategy shortName teamName)) {
+        $team_entry->{$top_child} = $team->first_child_text($top_child);
+    }
 
     my $totals = $team->first_child('boxscore')->first_child('teamTotals');
     foreach my $c ( $totals->children ) {
@@ -90,15 +90,32 @@ sub id   { my $self = shift; return $self->{id} }
 sub away { my $self = shift; return $self->{awayTeam} }
 sub home { my $self = shift; return $self->{homeTeam} }
 
-#  Return $self->away or $self->home based on a few different tests.
-sub _home_or_away {
+#  Given a team, return the opponent's section
+sub opponent {
     my ( $self, $k ) = @_;
+    my $o = $self->_home_or_away( $k, 1 );
 
+    if ( defined $o ) {
+        return $o;
+    }
+    return;
+}
+
+#  Return $self->away or $self->home based on a few different tests.
+#
+sub _home_or_away {
+    my ( $self, $k, $reverse ) = @_;
+
+    my $home_team;
     given ($k) {
-        when (/^home(?:Team)?/)    { return $self->home; }
-        when (/^away(?:Team)?/)    { return $self->away; }
-        when ( $self->home->{id} ) { return $self->home; }
-        when ( $self->away->{id} ) { return $self->away; }
+        when (/^home(?:Team)?/)    { $home_team = 1; }
+        when (/^away(?:Team)?/)    { $home_team = 0; }
+        when ( $self->home->{id} ) { $home_team = 1; }
+        when ( $self->away->{id} ) { $home_team = 0; }
+    }
+
+    if ( defined $home_team ) {
+        return ( $home_team xor $reverse ) ? $self->home : $self->away;
     }
     return;
 }
