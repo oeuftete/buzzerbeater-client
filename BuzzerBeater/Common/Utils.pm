@@ -1,5 +1,5 @@
 #
-#  $Id: Utils.pm,v 1.1 2009-04-04 01:15:29 ken Exp $
+#  $Id: Utils.pm,v 1.2 2009-04-05 17:20:23 ken Exp $
 #
 
 use strict;
@@ -7,13 +7,10 @@ use warnings;
 
 package BuzzerBeater::Common::Utils;
 
-use Carp qw(carp);
+use parent qw(Exporter);
+our @EXPORT_OK = qw(is_match_type);
 
-BEGIN {
-    use Exporter qw(import);
-    our @ISA       = qw(Exporter);
-    our @EXPORT_OK = qw(is_match_type);
-}
+use Carp qw(carp);
 
 #  This is what mixins/roles are for, I guess.
 sub is_match_type {
