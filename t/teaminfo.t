@@ -1,5 +1,5 @@
 #
-#  $Id: teaminfo.t,v 1.5 2009-04-04 14:19:18 ken Exp $
+#  $Id: teaminfo.t,v 1.6 2009-04-05 20:49:16 ken Exp $
 #
 use strict;
 use warnings;
@@ -9,36 +9,26 @@ use File::Slurp;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
-my $user         = 'oeuftete';
-my $access_code  = 'alphonse';
-my $agent        = 'oeuftete-test-app/0.1';
-my $login_params = { params => { login => $user, code => $access_code } };
-
 my $bb = BuzzerBeater::Client->new;
 
-$bb->agent($agent);
-is( $bb->agent, $agent, 'Agent set' );
+#  User team
+{
+    my $xml_input = read_file('t/files/teaminfo.xml');
+    isa_ok( my $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
+        'BuzzerBeater::Teaminfo' );
 
-my $teaminfo;
-SKIP: {
-    skip 'Site problems', 2 if $ENV{BB_SITE_PROBLEMS};
-    ok( $bb->login($login_params), 'Login successful' );
-
-    isa_ok( $teaminfo = $bb->teaminfo, 'BuzzerBeater::Teaminfo' );
+    is( $teaminfo->league,    'Naismith', 'Check league name' );
+    is( $teaminfo->leagueid,  128,        'Check league ID' );
+    is( $teaminfo->country,   'Canada',   'Check country name' );
+    is( $teaminfo->owner,     'oeuftete', 'Check owner' );
+    is( $teaminfo->shortName, 'CSI',      'Check short name' );
 }
 
-my $xml_input = read_file('t/files/teaminfo.xml');
-isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
-    'BuzzerBeater::Teaminfo' );
+#  Bot team
+{
+    my $xml_input = read_file('t/files/teaminfo_bot.xml');
+    isa_ok( my $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
+        'BuzzerBeater::Teaminfo' );
 
-is( $teaminfo->league,    'Naismith', 'Check league name' );
-is( $teaminfo->leagueid,  128,        'Check league ID' );
-is( $teaminfo->country,   'Canada',   'Check country name' );
-is( $teaminfo->owner,     'oeuftete', 'Check owner' );
-is( $teaminfo->shortName, 'CSI',      'Check short name' );
-
-$xml_input = read_file('t/files/teaminfo_bot.xml');
-isa_ok( $teaminfo = $bb->teaminfo( { xml => $xml_input } ),
-    'BuzzerBeater::Teaminfo' );
-
-is( $teaminfo->owner(), undef, 'Check empty owner on bot' );
+    is( $teaminfo->owner(), undef, 'Check empty owner on bot' );
+}

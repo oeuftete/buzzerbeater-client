@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.6 2009-04-04 02:53:58 ken Exp $
+#  $Id: boxscore.t,v 1.7 2009-04-05 20:49:16 ken Exp $
 #
 use strict;
 use warnings;
@@ -9,26 +9,10 @@ use File::Slurp;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
-my $user         = 'oeuftete';
-my $access_code  = 'alphonse';
-my $agent        = 'oeuftete-test-app/0.1';
-my $login_params = { params => { login => $user, code => $access_code } };
-
 my $bb = BuzzerBeater::Client->new;
 
-$bb->agent($agent);
-is( $bb->agent, $agent, 'Agent set' );
-
-my $box;
-SKIP: {
-    skip 'Site problems', 2 if $ENV{BB_SITE_PROBLEMS};
-    ok( $bb->login($login_params), 'Login successful' );
-
-    isa_ok( $box = $bb->boxscore, 'BuzzerBeater::Boxscore' );
-}
-
 my $xml_input = read_file('t/files/boxscore.xml');
-isa_ok( $box = $bb->boxscore( { xml => $xml_input } ),
+isa_ok( my $box = $bb->boxscore( { xml => $xml_input } ),
     'BuzzerBeater::Boxscore' );
 
 is( $box->id,                  6351345,     'Check match id' );
