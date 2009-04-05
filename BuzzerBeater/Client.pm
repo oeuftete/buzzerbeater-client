@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.6 2009-04-04 14:18:54 ken Exp $
+#  $Id: Client.pm,v 1.7 2009-04-05 17:50:59 ken Exp $
 #
 
 use strict;
@@ -53,6 +53,9 @@ sub AUTOLOAD {
     return $obj;
 }
 
+#
+#  TODO: Document allowable arguments.
+#
 sub new {
     my $class = shift;
     my $self  = {};
@@ -63,6 +66,12 @@ sub new {
 
 sub _initialize {
     my $self = shift;
+
+    my %args = @_;
+
+    if (exists $args{agent}) {
+        $self->agent($args{agent});
+    }
 
     $self->{apiUrls} = [
         qw ( http://www.buzzerbeater.com/BBAPI/

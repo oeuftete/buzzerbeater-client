@@ -14,6 +14,12 @@ my $login_params = { params => { login => $user, code => $access_code } };
 my $bb = BuzzerBeater::Client->new;
 isa_ok( $bb, 'BuzzerBeater::Client' );
 
+{
+    my $test_agent = "test-$agent";
+    my $new_bb = BuzzerBeater::Client->new( agent => $test_agent );
+    is( $new_bb->agent, $test_agent, 'Agent set through new' );
+}
+
 $bb->agent($agent);
 is( $bb->agent, $agent, 'Agent set' );
 
