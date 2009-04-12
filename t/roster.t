@@ -1,5 +1,5 @@
 #
-#  $Id: roster.t,v 1.2 2009-04-05 20:49:16 ken Exp $
+#  $Id: roster.t,v 1.3 2009-04-12 12:29:27 ken Exp $
 #
 use strict;
 use warnings;
@@ -21,10 +21,8 @@ is( $roster->teamid, 24818, 'Check team id' );
 {
     my $found_player = $roster->findPlayer(4639936);
     isa_ok( $found_player, 'BuzzerBeater::Player' );
-    is( $found_player->getName,
-        'Adriano Fabiano',
-        'Check name of found player'
-    );
+    is( $found_player->name, 'Adriano Fabiano',
+        'Check name of found player' );
 }
 
 {
