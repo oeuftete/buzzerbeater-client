@@ -21,7 +21,11 @@ isa_ok( $bb, 'BuzzerBeater::Client' );
 }
 
 $bb->agent($agent);
-is( $bb->agent, $agent, 'Agent set' );
+is( $bb->agent, $agent, 'Agent set and read' );
+
+$bb->debug(1);
+is( $bb->debug, 1, 'Debug level set and read' );
+$bb->debug(0);
 
 ok( $bb->login($login_params), 'Login successful' );
 ok( $bb->logout,               'Logout successful' );

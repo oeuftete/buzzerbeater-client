@@ -1,5 +1,5 @@
 #
-#  $Id: Client.pm,v 1.7 2009-04-05 17:50:59 ken Exp $
+#  $Id: Client.pm,v 1.8 2009-04-12 15:51:28 ken Exp $
 #
 
 use strict;
@@ -69,8 +69,13 @@ sub _initialize {
 
     my %args = @_;
 
-    if (exists $args{agent}) {
-        $self->agent($args{agent});
+    if ( exists $args{agent} ) {
+        $self->agent( $args{agent} );
+    }
+
+    $self->debug(0);
+    if ( exists $args{debug} ) {
+        $self->debug( $args{debug} );
     }
 
     $self->{apiUrls} = [
@@ -78,11 +83,10 @@ sub _initialize {
             http://www2.buzzerbeater.org/BBAPI/ )
     ];
 
-    $self->{apiIterator}
+    $self->{_apiIterator}
         = Array::Iterator::Circular->new( shuffle @{ $self->{apiUrls} } );
     $self->_selectSite;
     $self->{lastError} = '';
-    $self->{debug}     = 0;
     $self->cookie_jar( {} );
 }
 
@@ -90,7 +94,7 @@ sub _selectSite {
     my $self = shift;
 
     #  Choose the next URL in the cycle
-    $self->{_apiSite} = $self->{apiIterator}->next;
+    $self->{_apiSite} = $self->{_apiIterator}->next;
 }
 
 sub _newRequest {
