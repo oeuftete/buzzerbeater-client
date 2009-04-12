@@ -1,5 +1,5 @@
 #
-#  $Id: Player.pm,v 1.3 2009-04-04 14:19:18 ken Exp $
+#  $Id: Player.pm,v 1.4 2009-04-12 12:25:41 ken Exp $
 #
 
 use strict;
@@ -52,6 +52,7 @@ sub setFromXml {
 
         #  TODO: Copied from Roster!
         $self->id( $el->att('id') );
+        $self->owner( $el->att('owner') );
 
         foreach my $playerEl ( $el->children ) {
             if ( $playerEl->gi eq 'skills' ) {
@@ -74,6 +75,9 @@ sub setFromXml {
     return $self;
 }
 
+#
+#  TODO:  Moose-ify this?
+#
 #  Get/set player id
 sub id {
     my $self = shift;
@@ -82,6 +86,16 @@ sub id {
         return $self;
     }
     return $self->{id};
+}
+
+#  Get/set player owner
+sub owner {
+    my $self = shift;
+    if (@_) {
+        $self->{owner} = shift;
+        return $self;
+    }
+    return $self->{owner};
 }
 
 # Get/set the basic (i.e. att-less) top-level fields.
@@ -113,7 +127,7 @@ sub nationality {
     my $self = shift;
 
     if (@_) {
-        ( $self->{nationality}->{value}, $self->{nationality}->{id} )
+        ( $self->{nationality}->{name}, $self->{nationality}->{id} )
             = map { encode_utf8($_) } @_;
         return $self;
     }
@@ -141,8 +155,10 @@ sub skills {
     return $self->{skills};
 }
 
-# Return the full name
-sub getName {
+# Return the full name.  No set.
+#
+# TODO: A two argument (or one pair) set?
+sub name {
     my $self = shift;
     return $self->basic('firstName') . ' ' . $self->basic('lastName');
 }
