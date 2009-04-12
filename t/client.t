@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 use Test::More qw(no_plan);
+use Test::Output;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
@@ -34,3 +35,15 @@ ok( !$bb->logout,              'Logout fails when not logged in' );
 $login_params
     = { params => { login => $user, code => $access_code . 'xxx' } };
 ok( !$bb->login($login_params), 'Bad login fails' );
+
+#  Make sure we clean up properly.
+{
+    my $bb2 = BuzzerBeater::Client->new;
+    $bb2->debug(1);
+    stdout_like(
+        sub { undef $bb2 },
+        qr!Sending.*BBAPI/logout\.aspx!,
+        'Logout attempted on destruction.'
+    );
+}
+

@@ -1,12 +1,12 @@
 #
-#  $Id: Client.pm,v 1.8 2009-04-12 15:51:28 ken Exp $
+#  $Id: Client.pm,v 1.9 2009-04-12 17:23:17 ken Exp $
 #
 
 use strict;
 use warnings;
 
 package BuzzerBeater::Client;
-use base 'LWP::UserAgent';
+use parent 'LWP::UserAgent';
 
 use Carp;
 
@@ -28,8 +28,126 @@ use BuzzerBeater::Standings;
 use BuzzerBeater::Teaminfo;
 use BuzzerBeater::Teamstats;
 
-use Data::Dumper;
-$Data::Dumper::Indent = 1;
+########################################################################
+#
+#  API
+
+#
+#  TODO: Document allowable arguments.
+#
+sub new {
+    my $class = shift;
+    my $self  = {};
+    bless $self, $class;
+    $self->_initialize(@_);
+    return $self;
+}
+
+sub debug {
+    my $self = shift;
+
+    if (@_) {
+        my $_debug_level = shift;
+        $self->{debug} = $_debug_level;
+        return $self;
+    }
+    else {
+        return $self->{debug};
+    }
+}
+
+sub lastError {
+    my $self = shift;
+    return $self->{lastError};
+}
+
+# TODO Login and logout really should be abstractable a bit more.
+#
+# login(\%options)
+#
+# Returns:
+#   0 - Error, use $object->{lastError}
+#   1 - Successful login
+
+sub login {
+
+    my ( $self, $options ) = @_;
+
+    my $loggedIn = 0;
+
+    my $req = $self->_newRequest(
+        {   apiMethod => 'login',
+            params    => $options->{params}
+        }
+    );
+
+    my $response = $self->request($req);
+
+    if ( $response->is_success ) {
+
+        ( $self->debug > 0 ) && printf "%s\n", $response->content;
+        if ( $self->debug > 1 ) {
+            open RESPONSE, ">dumps/login.xml"
+                or croak "Unable to open file to dump xml: $!\n";
+            print RESPONSE $response->content;
+            close RESPONSE;
+        }
+
+        my $twig = XML::Twig->new(
+            TwigRoots => {
+                loggedIn => sub { $loggedIn = 1 },
+                error => sub { $self->_setErrorFromXml(@_) }
+            }
+        );
+
+        $twig->parse( $response->content );
+    }
+    else {
+        $self->{lastError} = "Unexpected error: " . $response->status_line;
+    }
+    return $loggedIn;
+}
+
+# logout(\%options)
+#
+# Returns:
+#   0 - Error, use $object->{lastError}
+#   1 - Successful logout
+
+sub logout {
+    my ( $self, $options ) = @_;
+
+    my $loggedOut = 0;
+
+    my $req = $self->_newRequest( { apiMethod => 'logout' } );
+    my $response = $self->request($req);
+
+    if ( $response->is_success ) {
+        ( $self->debug > 0 ) && printf "%s\n", $response->content;
+        if ( $self->debug > 1 ) {
+            open RESPONSE, ">dumps/logout.xml"
+                or croak "Unable to open file to dump xml: $!\n";
+            print RESPONSE $response->content;
+            close RESPONSE;
+        }
+
+        my $twig = XML::Twig->new(
+            TwigRoots => {
+                loggedOut => sub { $loggedOut = 1 },
+                error => sub { $self->_setErrorFromXml(@_) }
+            }
+        );
+
+        $twig->parse( $response->content );
+    }
+    else {
+        $self->{lastError} = "Unexpected error: " . $response->status_line;
+    }
+    return $loggedOut;
+}
+
+#  END API
+########################################################################
 
 #  Use AUTOLOAD to return our various similar objects
 sub AUTOLOAD {
@@ -53,15 +171,9 @@ sub AUTOLOAD {
     return $obj;
 }
 
-#
-#  TODO: Document allowable arguments.
-#
-sub new {
-    my $class = shift;
-    my $self  = {};
-    bless $self, $class;
-    $self->_initialize(@_);
-    return $self;
+sub DESTROY {
+    my $self = shift;
+    $self->logout;  # don't care if it fails
 }
 
 sub _initialize {
@@ -110,120 +222,9 @@ sub _newRequest {
     my $req = HTTP::Request->new( GET => $url );
 }
 
-sub lastError {
-    my $self = shift;
-    return $self->{lastError};
-}
-
-sub debug {
-    my $self = shift;
-
-    if (@_) {
-        my $_debug_level = shift;
-        $self->{debug} = $_debug_level;
-        return $self;
-    }
-    else {
-        return $self->{debug};
-    }
-}
-
 sub _setErrorFromXml {
     my ( $self, $t, $error ) = @_;
     $self->{lastError} = $error->att('message');
-}
-
-########################################################################
-#
-# API functions
-#
-# TODO Login and logout really should be abstractable a bit more.
-
-########################################################################
-#
-# login(\%options)
-#
-# Returns:
-#   0 - Error, use $object->{lastError}
-#   1 - Successful login
-
-sub login {
-
-    my ( $self, $options ) = @_;
-
-    my $loggedIn = 0;
-
-    my $req = $self->_newRequest(
-        {   apiMethod => 'login',
-            params    => $options->{params}
-        }
-    );
-
-    my $response = $self->request($req);
-
-    if ( $response->is_success ) {
-
-        ( $self->debug > 0 ) && printf "%s\n", $response->content;
-        if ( $self->debug > 1 ) {
-            open RESPONSE, ">dumps/login.xml"
-                or croak "Unable to open file to dump xml: $!\n";
-            print RESPONSE $response->content;
-            close RESPONSE;
-        }
-
-        my $twig = XML::Twig->new(
-            TwigRoots => {
-                loggedIn => sub { $loggedIn = 1 },
-                error => sub { $self->_setErrorFromXml(@_) }
-            }
-        );
-
-        $twig->parse( $response->content );
-    }
-    else {
-        $self->{lastError} = "Unexpected error: " . $response->status_line;
-    }
-    return $loggedIn;
-}
-
-########################################################################
-#
-# logout(\%options)
-#
-# Returns:
-#   0 - Error, use $object->{lastError}
-#   1 - Successful logout
-
-sub logout {
-    my ( $self, $options ) = @_;
-
-    my $loggedOut = 0;
-
-    my $req = $self->_newRequest( { apiMethod => 'logout' } );
-    my $response = $self->request($req);
-
-    if ( $response->is_success ) {
-        ( $self->debug > 0 ) && printf "%s\n", $response->content;
-        if ( $self->debug > 1 ) {
-            open RESPONSE, ">dumps/logout.xml"
-                or croak "Unable to open file to dump xml: $!\n";
-            print RESPONSE $response->content;
-            close RESPONSE;
-        }
-
-        my $twig = XML::Twig->new(
-            TwigRoots => {
-                loggedOut => sub { $loggedOut = 1 },
-                error => sub { $self->_setErrorFromXml(@_) }
-            }
-        );
-
-        $twig->parse( $response->content );
-    }
-    else {
-        $self->{lastError} = "Unexpected error: " . $response->status_line;
-    }
-    return $loggedOut;
 }
 
 sub _generic {
@@ -239,9 +240,8 @@ sub _generic {
     $self->_abstractRequest( $method, $options, \$obj );
 }
 
-########################################################################
 #
-# _abstractRequest(\%options, $method, \$returnValue)
+# _abstractRequest($method, \%options, \$returnValue)
 #
 # Initialize the $returnValue object before calling this.
 #
@@ -291,4 +291,8 @@ sub _abstractRequest {
     }
 }
 
+#  END Private methods
+#
 ########################################################################
+
+1;
