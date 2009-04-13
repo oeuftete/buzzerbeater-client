@@ -40,4 +40,5 @@ is( $player->name, 'Miroslaw Tchorzewski', 'Name' );
     is( $basic->{jersey}, 49, 'Jersey' );
 }
 
-#  Setters
+#  Salary estimation
+is( int( $player->josef_ka ), 3374, 'Salary estimation' );

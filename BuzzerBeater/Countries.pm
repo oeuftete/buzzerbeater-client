@@ -24,13 +24,13 @@ sub _initialize {
 
     if (@_) {
         my $args = shift;
-        $self->setFromXml( $args->{xml} ) if ( exists $args->{xml} );
+        $self->_setFromXml( $args->{xml} ) if ( exists $args->{xml} );
     }
 
     $self->{countries} = [];
 }
 
-sub setFromXml {
+sub _setFromXml {
     my $self = shift;
     my $xml  = shift;
 

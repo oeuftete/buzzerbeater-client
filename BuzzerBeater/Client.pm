@@ -255,7 +255,7 @@ sub _abstractRequest {
     #  TODO: Is the xml option set?  If so make the request
     if ( exists( $options->{xml} ) ) {
         ( $self->debug > 0 ) && printf "%s\n", $options->{xml};
-        $$r->setFromXml( $options->{xml} );
+        $$r->_setFromXml( $options->{xml} );
     }
     else {
 
@@ -281,7 +281,7 @@ sub _abstractRequest {
                 print RESPONSE $response->content;
                 close RESPONSE;
             }
-            $$r->setFromXml( $response->content );
+            $$r->_setFromXml( $response->content );
         }
         else {
             $self->{lastError}
