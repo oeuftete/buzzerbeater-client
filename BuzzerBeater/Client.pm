@@ -17,10 +17,12 @@ use LWP::UserAgent;
 
 use XML::Twig;
 
+#  TODO: require these closer to their use?
 use BuzzerBeater::Arena;
 use BuzzerBeater::Boxscore;
 use BuzzerBeater::Countries;
 use BuzzerBeater::Economy;
+use BuzzerBeater::Leagues;
 use BuzzerBeater::Player;
 use BuzzerBeater::Roster;
 use BuzzerBeater::Schedule;
@@ -157,9 +159,8 @@ sub AUTOLOAD {
     our $AUTOLOAD;
     ( my $method = $AUTOLOAD ) =~ s/.*:://s;
 
-    my @autos
-        = qw( arena boxscore countries economy player roster schedule standings
-        teaminfo teamstats);
+    my @autos = qw( arena boxscore countries economy leagues player
+        roster schedule standings teaminfo teamstats);
 
     my $obj;
     if ( grep {/$method/} @autos ) {
@@ -173,7 +174,7 @@ sub AUTOLOAD {
 
 sub DESTROY {
     my $self = shift;
-    $self->logout;  # don't care if it fails
+    $self->logout;    # don't care if it fails
 }
 
 sub _initialize {
