@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <division countryid="4" level="3" retrieved="2009-04-22T22:54:25Z">
+        
+        <league id="133">III.1</league>
+        
+        <league id="134">III.2</league>
+        
+        <league id="135">III.3</league>
+        
+        <league id="136">III.4</league>
+        
+        <league id="137">III.5</league>
+        
+        <league id="138">III.6</league>
+        
+        <league id="139">III.7</league>
+        
+        <league id="140">III.8</league>
+        
+        <league id="141">III.9</league>
+        
+        <league id="142">III.10</league>
+        
+        <league id="143">III.11</league>
+        
+        <league id="144">III.12</league>
+        
+        <league id="145">III.13</league>
+        
+        <league id="146">III.14</league>
+        
+        <league id="147">III.15</league>
+        
+        <league id="148">III.16</league>
+        
+    </division>
+</bbapi>
