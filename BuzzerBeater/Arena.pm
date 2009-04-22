@@ -60,8 +60,7 @@ sub _setFromXml {
         if ($expansion) {
             $self->{expansion}->{daysLeft} = $expansion->att('daysLeft');
             foreach my $seatType ( $expansion->children ) {
-                $self->{expansion}->{ $seatType->gi }->{value}
-                    = $seatType->text;
+                $self->{expansion}->{ $seatType->gi } = $seatType->text;
             }
         }
     }

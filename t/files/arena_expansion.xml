@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <arena teamid="24818" retrieved="2009-04-22T23:34:44Z">
+        <name>Cape Sable Sculpins Center</name>
+        <seats>
+            <bleachers price="19" nextPrice="20">13039</bleachers>
+            <lowerTier price="60" nextPrice="67">1538</lowerTier>
+            <courtside price="180" nextPrice="180">357</courtside>
+            <luxury price="1099" nextPrice="1099">27</luxury>
+        </seats>
+        
+        <expansion daysLeft="1">
+            <bleachers>800</bleachers>
+            <lowerTier>100</lowerTier>
+            <courtside>30</courtside>
+            <luxury>0</luxury>
+        </expansion>
+        
+    </arena>
+</bbapi>
