@@ -16,6 +16,11 @@ is( $standings->league,  'Naismith', 'Check league name' );
 is( $standings->country, 'Canada',   'Check country name' );
 
 {
+    isa_ok(my $conf = $standings->conference->{'Big 8'}, 'ARRAY');
+    is($conf->[0]->{id}, 24809, 'ID of first place team');
+}
+
+{
     isa_ok( my $team_standings = $standings->team(24818), 'HASH' );
     is( $team_standings->{id}, 24818, 'Same team id back we supplied' );
     is( $team_standings->{pf}, 1077,  'Points for correct' );
