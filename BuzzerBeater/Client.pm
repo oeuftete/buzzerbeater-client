@@ -17,19 +17,6 @@ use LWP::UserAgent;
 
 use XML::Twig;
 
-#  TODO: require these closer to their use?
-use BuzzerBeater::Arena;
-use BuzzerBeater::Boxscore;
-use BuzzerBeater::Countries;
-use BuzzerBeater::Economy;
-use BuzzerBeater::Leagues;
-use BuzzerBeater::Player;
-use BuzzerBeater::Roster;
-use BuzzerBeater::Schedule;
-use BuzzerBeater::Standings;
-use BuzzerBeater::Teaminfo;
-use BuzzerBeater::Teamstats;
-
 ########################################################################
 #
 #  API
@@ -159,17 +146,7 @@ sub AUTOLOAD {
     our $AUTOLOAD;
     ( my $method = $AUTOLOAD ) =~ s/.*:://s;
 
-    my @autos = qw( arena boxscore countries economy leagues player
-        roster schedule standings teaminfo teamstats);
-
-    my $obj;
-    if ( grep {/$method/} @autos ) {
-        $obj = $self->_generic( $method, @_ );
-    }
-    else {
-        croak "Method [$method] not defined!";
-    }
-    return $obj;
+    return $self->_generic( $method, @_ );
 }
 
 sub DESTROY {
@@ -234,8 +211,12 @@ sub _generic {
     my $return_module = ucfirst $method;
     my $obj           = {};
 
-    # TODO : Check that the module is included
-    bless $obj, "BuzzerBeater::$return_module";
+    my $_submodule = "BuzzerBeater::$return_module";
+    eval "require $_submodule";
+    croak $@ if $@;
+
+    bless $obj, $_submodule;
+
     $obj->_initialize(@_);
 
     $self->_abstractRequest( $method, $options, \$obj );
