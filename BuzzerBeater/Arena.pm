@@ -7,6 +7,7 @@ use warnings;
 
 package BuzzerBeater::Arena;
 
+use Encode;
 use XML::Twig;
 use Carp;
 
@@ -43,12 +44,12 @@ sub _setFromXml {
         $self->{teamid} = $el->att('teamid');
 
         #  Set name
-        $self->{name} = $el->first_child_text('name');
+        $self->{name} = encode_utf8( $el->first_child_text('name') );
 
         #  Set seats
         my $seats = $el->first_child('seats');
         foreach my $seatType ( $seats->children ) {
-            $self->{seats}->{ $seatType->gi }->{value} = $seatType->text;
+            $self->{seats}->{ $seatType->gi }->{number} = $seatType->text;
             foreach my $seatPricing ( 'price', 'nextPrice' ) {
                 $self->{seats}->{ $seatType->gi }->{$seatPricing}
                     = $seatType->att($seatPricing);
@@ -75,5 +76,24 @@ sub teamid    { my $self = shift; return $self->{teamid} }
 sub name      { my $self = shift; return $self->{name} }
 sub seats     { my $self = shift; return $self->{seats} }
 sub expansion { my $self = shift; return $self->{expansion} }
+
+sub size {
+    my $self = shift;
+
+    my $_s = $self->seats;
+    return
+          $_s->{bleachers}->{number} 
+        + $_s->{lowerTier}->{number}
+        + $_s->{courtside}->{number}
+        + $_s->{luxury}->{number};
+}
+
+sub expansion_size {
+    my $self = shift;
+
+    my $_e = $self->expansion;
+    return $_e->{bleachers} + $_e->{lowerTier} + $_e->{courtside}
+        + $_e->{luxury};
+}
 
 1;

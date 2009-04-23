@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <arena teamid="24823" retrieved="2009-04-23T01:23:20Z">
+        <name>BC Törööö Center</name>
+        <seats>
+            <bleachers price="13" nextPrice="13">28205</bleachers>
+            <lowerTier price="42" nextPrice="42">3105</lowerTier>
+            <courtside price="130" nextPrice="130">650</courtside>
+            <luxury price="900" nextPrice="900">42</luxury>
+        </seats>
+        
+        <expansion daysLeft="8">
+            <bleachers>2000</bleachers>
+            <lowerTier>200</lowerTier>
+            <courtside>0</courtside>
+            <luxury>0</luxury>
+        </expansion>
+        
+    </arena>
+</bbapi>
