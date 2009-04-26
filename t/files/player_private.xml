@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <player id="5157480" owner="22846" retrieved="2009-04-26T18:37:15Z">
+        <firstName>Clarence</firstName>
+        <lastName>Boggs</lastName>
+        <nationality id="1">USA</nationality>
+        <age>21</age>
+        <height>84</height>
+        <dmi>599400</dmi>
+        
+        
+        <salary>63485</salary>
+        <bestPosition>C</bestPosition>
+        <skills>
+            <gameShape>8</gameShape>
+            <potential>8</potential>
+            
+        </skills>
+    </player>
+</bbapi>

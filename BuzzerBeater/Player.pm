@@ -158,6 +158,12 @@ sub name {
 sub josef_ka {
 
     my $self = shift;
+    
+    my $player_skills = $self->skills;
+    if (! exists $player_skills->{jumpShot} ) {
+        carp "Salary estimation not possible without skills";
+        return;
+    }
 
     my %weights = (
         PG => {
@@ -238,7 +244,6 @@ sub josef_ka {
     );
 
     my $t             = $weights{ $self->basic('bestPosition') };
-    my $player_skills = $self->skills;
 
     my $salary = $t->{multiplier};
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <player id="2289696" owner="42691" retrieved="2009-04-26T18:44:55Z">
+        <firstName>Ozren</firstName>
+        <lastName>Ðukanovic</lastName>
+        <nationality id="29">Srbija</nationality>
+        <age>23</age>
+        <height>83</height>
+        <dmi>746600</dmi>
+        
+        <jersey>26</jersey>
+        <salary>74347</salary>
+        <bestPosition>C</bestPosition>
+        <skills>
+            <gameShape>9</gameShape>
+            <potential>6</potential>
+            
+        </skills>
+    </player>
+</bbapi>
