@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="23494" retrieved="2009-04-29T11:20:53Z">
+        <teamName>Bobo%s</teamName>
+        <shortName>BPH</shortName>
+        
+        <owner supporter="1">Bobos Playhouse</owner>
+        
+        <league id="4" level="2">II.3</league>
+        <country id="1">USA</country>
+    </team>
+</bbapi>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="36396" retrieved="2009-04-26T18:42:31Z">
+        <teamName>La Fenice Basket</teamName>
+        <shortName>FEN</shortName>
+        
+        <owner>mosva☜</owner>
+        
+        <league id="270" level="3">III.12</league>
+        <country id="10">Italia</country>
+    </team>
+</bbapi>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="70241" retrieved="2009-04-29T11:23:02Z">
+        <teamName>kırkısrak eagles</teamName>
+        <shortName>KIE</shortName>
+        
+        <owner supporter="1">eaglesight</owner>
+        
+        <league id="170" level="1">TBL</league>
+        <country id="6">Türkiye</country>
+    </team>
+</bbapi>

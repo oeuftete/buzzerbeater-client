@@ -68,5 +68,6 @@ sub country      { my $self = shift; return $self->{country} }
 sub is_supporter { my $self = shift; return $self->{supporter} }
 sub owner        { my $self = shift; return $self->{owner} }
 sub shortName    { my $self = shift; return $self->{shortName} }
+sub teamName     { my $self = shift; return $self->{teamName} }
 
 1;

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="25435" retrieved="2009-04-26T18:39:29Z">
+        <teamName>粘豆包</teamName>
+        <shortName>NDB</shortName>
+        
+        <owner>粘豆包</owner>
+        
+        <league id="149" level="1">I.1</league>
+        <country id="5">China</country>
+    </team>
+</bbapi>

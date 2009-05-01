@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <team id="25331" retrieved="2009-04-26T18:38:48Z">
+        <teamName>吸血鬼</teamName>
+        <shortName>MAO</shortName>
+        
+        <owner>maoyi</owner>
+        
+        <league id="149" level="1">I.1</league>
+        <country id="5">China</country>
+    </team>
+</bbapi>
