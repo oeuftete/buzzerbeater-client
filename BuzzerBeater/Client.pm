@@ -50,7 +50,11 @@ sub lastError {
     return $self->{lastError};
 }
 
-# TODO Login and logout really should be abstractable a bit more.
+# TODO Login and logout really should be abstractable a bit more.  Maybe:
+#
+# BB::AbstractPage
+#   BB::AbstractAuth (login, logout)
+#   BB::AbstractData (everything else)
 #
 # login(\%options)
 #
@@ -200,6 +204,7 @@ sub _newRequest {
     my $req = HTTP::Request->new( GET => $url );
 }
 
+#  TODO: Should this go in a new BB::AbstractPage?
 sub _setErrorFromXml {
     my ( $self, $t, $error ) = @_;
     $self->{lastError} = $error->att('message');
@@ -209,26 +214,35 @@ sub _generic {
     my ( $self, $method, $options ) = @_;
 
     my $return_module = ucfirst $method;
-    my $obj           = {};
 
     my $_submodule = "BuzzerBeater::$return_module";
     eval "require $_submodule";
     croak $@ if $@;
 
+    #  TODO: OK, this is not done well, is it?  
+    #
+    #  What needs to happen:
+    #    - return $_submodule->new(@_)
+    #    - Let $_submodule's new call its _initialize
+    #    - Define a BB::AbstractPage, and put _abstractRequest there.
+    #
+    my $obj           = {};
     bless $obj, $_submodule;
 
+    #  TODO: Really, @_ ???
     $obj->_initialize(@_);
 
     $self->_abstractRequest( $method, $options, \$obj );
 }
 
+#  TODO: Move this to a new BB::AbstractPage
 #
 # _abstractRequest($method, \%options, \$returnValue)
 #
 # Initialize the $returnValue object before calling this.
 #
 # Returns:
-#   0 - Error, use $object->{lastError}
+#   undef - Error, use $object->{lastError}
 #   Other - Successful
 
 sub _abstractRequest {
@@ -269,6 +283,7 @@ sub _abstractRequest {
             $self->{lastError}
                 = "Unexpected error: " . $response->status_line;
             ( $self->debug > 0 ) && printf "%s\n", $response->as_string;
+            return;
         }
     }
 }
