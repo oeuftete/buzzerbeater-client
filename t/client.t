@@ -7,6 +7,17 @@ use Test::Output;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
+TODO: {
+    eval "use Test::Pod::Coverage";
+    todo_skip "Test::Pod::Coverage required for testing pod coverage", 1
+        if $@;
+
+    local $TODO = "Pod not written yet!";
+
+    pod_coverage_ok( 'BuzzerBeater::Client',
+        'BuzzerBeater::Client pod is covered' );
+}
+
 my $user         = 'oeuftete';
 my $access_code  = 'alphonse';
 my $agent        = 'oeuftete-test-app/0.1';

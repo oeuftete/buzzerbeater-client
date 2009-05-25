@@ -10,6 +10,17 @@ use Encode;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
+TODO: {
+    eval "use Test::Pod::Coverage";
+    todo_skip "Test::Pod::Coverage required for testing pod coverage", 1
+        if $@;
+
+    local $TODO = "Pod not written yet!";
+
+    pod_coverage_ok( 'BuzzerBeater::Teaminfo',
+        'BuzzerBeater::Teaminfo pod is covered' );
+}
+
 my $bb = BuzzerBeater::Client->new;
 
 #  User team
