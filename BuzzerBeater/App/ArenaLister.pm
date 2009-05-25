@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #
 #  $Id$
 #
@@ -11,7 +11,7 @@ package BuzzerBeater::App::ArenaLister;
 use Getopt::Long;
 use Pod::Usage;
 
-use KGC::BB;
+use Local::BB;
 
 run() unless caller();
 
@@ -19,40 +19,38 @@ sub run {
     my %opts = ( 'max-level' => 3, );
     process_options( \%opts );
 
+    my $bb = Local::BB->new;
+
     #  Get the leagueid for 1..max-level
-    my @leagues = league_ids( $opts{'max-level'}, $opts{'country'} );
+    my @leagues = league_ids( $bb, $opts{'max-level'}, $opts{'country'} );
 
     #  For each leagueid, get each team from the standings
-    my @teams = team_ids( \@leagues );
+    my @teams = team_ids( $bb, \@leagues );
 
     #  For each team, get their BB::Arena.  Store in hash of
     #    ( teamid => BB::Arena )
-    my %arenas = arena_details( \@teams );
+    my %arenas = arena_details( $bb, \@teams );
 
     #  Return list sorted by descending $arena->size.
-    for my $a (sort { $b->size <=> $a->size } values %arenas) {
+    for my $a ( sort { $b->size <=> $a->size } values %arenas ) {
         printf "%-40s: %6d\n", $a->name, $a->size;
     }
 }
 
 sub arena_details {
-    my ($t_id) = @_;
+    my ( $bb, $t_id ) = @_;
 
     my %a;
-    my $bb = KGC::BB->new;
-
     for my $t (@$t_id) {
-        $a{$t} = $bb->arena({params => { teamid => $t }});
+        $a{$t} = $bb->arena( { params => { teamid => $t } } );
     }
     return %a;
 }
 
 sub team_ids {
-    my ($l_id) = @_;
+    my ( $bb, $l_id ) = @_;
 
     my @t;
-    my $bb = KGC::BB->new;
-
     for my $l (@$l_id) {
         my $s = $bb->standings( { params => { leagueid => $l } } );
         for my $team_standings ( values %{ $s->conference } ) {
@@ -63,11 +61,9 @@ sub team_ids {
 }
 
 sub league_ids {
-    my ( $ml, $country ) = @_;
+    my ( $bb, $ml, $country ) = @_;
 
     my @l;
-    my $bb = KGC::BB->new;
-
     for my $level ( 1 .. $ml ) {
         my $leagues = $bb->leagues(
             {   params => {
@@ -105,7 +101,6 @@ sub process_options {
 
 ArenaLister.pm - List the largest arenas in a given country.
 
-
 =head1 VERSION
 
 $Id$
@@ -122,7 +117,7 @@ $Id$
 
 =item B<--country>
 
-The country name or ID to generate data for.  Required.
+The country name (TODO) or ID to generate data for.  Required.
 
 =item B<--max-level>
 
