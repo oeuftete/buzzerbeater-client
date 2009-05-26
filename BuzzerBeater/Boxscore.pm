@@ -1,5 +1,5 @@
 #
-#  $Id: Boxscore.pm,v 1.8 2009-04-04 14:19:17 ken Exp $
+#  $Id$
 #
 
 require 5.10.0;

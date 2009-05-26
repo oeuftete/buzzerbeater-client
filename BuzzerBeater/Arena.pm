@@ -1,5 +1,5 @@
 #
-#  $Id: Arena.pm,v 1.3 2009-04-04 14:19:17 ken Exp $
+#  $Id$
 #
 
 use strict;

@@ -1,5 +1,5 @@
 #
-#  $Id: teamstats.t,v 1.3 2009-04-05 20:49:16 ken Exp $
+#  $Id$
 #
 use strict;
 use warnings;

@@ -1,5 +1,5 @@
 #
-#  $Id: common-utils.t,v 1.1 2009-04-04 01:15:29 ken Exp $
+#  $Id$
 #
 use strict;
 use warnings;

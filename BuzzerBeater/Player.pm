@@ -1,5 +1,5 @@
 #
-#  $Id: Player.pm,v 1.4 2009-04-12 12:25:41 ken Exp $
+#  $Id$
 #
 
 use strict;

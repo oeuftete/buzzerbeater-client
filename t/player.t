@@ -1,5 +1,5 @@
 #
-#  $Id: player.t,v 1.1 2009-04-12 12:25:41 ken Exp $
+#  $Id$
 #
 use strict;
 use warnings;

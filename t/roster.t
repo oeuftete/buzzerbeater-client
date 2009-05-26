@@ -1,5 +1,5 @@
 #
-#  $Id: roster.t,v 1.3 2009-04-12 12:29:27 ken Exp $
+#  $Id$
 #
 use strict;
 use warnings;

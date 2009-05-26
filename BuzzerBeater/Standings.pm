@@ -1,5 +1,5 @@
 #
-#  $Id: Standings.pm,v 1.3 2009-04-04 13:02:52 ken Exp $
+#  $Id$
 #
 
 use strict;

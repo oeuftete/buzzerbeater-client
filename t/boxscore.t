@@ -1,5 +1,5 @@
 #
-#  $Id: boxscore.t,v 1.7 2009-04-05 20:49:16 ken Exp $
+#  $Id$
 #
 use strict;
 use warnings;

@@ -1,5 +1,5 @@
 #
-#  $Id: Teamstats.pm,v 1.2 2009-04-04 14:19:18 ken Exp $
+#  $Id$
 #
 
 use strict;

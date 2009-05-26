@@ -1,5 +1,5 @@
 #
-#  $Id: Economy.pm,v 1.2 2009-04-04 12:43:38 ken Exp $
+#  $Id$
 #
 
 use strict;
