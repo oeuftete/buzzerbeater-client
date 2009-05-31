@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <standings season="8" retrieved="2009-05-31T19:54:04Z">
+        <league id="2272" level="1">Extraliga</league>
+        <country id="67">Slovensko</country>
+        <regularSeason>
+            <conference>
+                <team id="58379">
+                    <teamName>Namestovo Devils</teamName>
+                    <wins>15</wins>
+                    <losses>7</losses>
+                    <pf>2084</pf>
+                    <pa>1777</pa>
+                </team><team id="58436">
+                    <teamName>Nitra Corgons</teamName>
+                    <wins>14</wins>
+                    <losses>8</losses>
+                    <pf>1955</pf>
+                    <pa>1689</pa>
+                </team><team id="58505">
+                    <teamName>BK Avalanche Bardejov</teamName>
+                    <wins>13</wins>
+                    <losses>9</losses>
+                    <pf>1946</pf>
+                    <pa>1817</pa>
+                </team><team id="58449">
+                    <teamName>Confusing Pigs</teamName>
+                    <wins>12</wins>
+                    <losses>10</losses>
+                    <pf>1945</pf>
+                    <pa>2043</pa>
+                </team><team id="58506">
+                    <teamName>Nitra Ginos</teamName>
+                    <wins>11</wins>
+                    <losses>11</losses>
+                    <pf>1909</pf>
+                    <pa>1916</pa>
+                </team><team id="58385">
+                    <teamName>Nitrička</teamName>
+                    <wins>10</wins>
+                    <losses>12</losses>
+                    <pf>1989</pf>
+                    <pa>1898</pa>
+                </team><team id="58420">
+                    <teamName>And1 Zalesie</teamName>
+                    <wins>8</wins>
+                    <losses>14</losses>
+                    <pf>2121</pf>
+                    <pa>2286</pa>
+                </team><team id="58423">
+                    <teamName>BC Artmedia Petržalka</teamName>
+                    <wins>0</wins>
+                    <losses>22</losses>
+                    <pf>692</pf>
+                    <pa>1906</pa>
+                </team>
+            </conference>
+            <conference>
+                <team id="58425">
+                    <teamName>Csont Nélkül</teamName>
+                    <wins>20</wins>
+                    <losses>2</losses>
+                    <pf>2379</pf>
+                    <pa>1820</pa>
+                </team><team id="58430">
+                    <teamName>Bratislava Globetrotters</teamName>
+                    <wins>19</wins>
+                    <losses>3</losses>
+                    <pf>2231</pf>
+                    <pa>1637</pa>
+                </team><team id="58445">
+                    <teamName>Strong mans</teamName>
+                    <wins>13</wins>
+                    <losses>9</losses>
+                    <pf>2034</pf>
+                    <pa>1857</pa>
+                </team><team id="58378">
+                    <teamName>ruzinov</teamName>
+                    <wins>11</wins>
+                    <losses>11</losses>
+                    <pf>2142</pf>
+                    <pa>2151</pa>
+                </team><team id="58432">
+                    <teamName>BO Žabky Grenitz</teamName>
+                    <wins>9</wins>
+                    <losses>13</losses>
+                    <pf>1955</pf>
+                    <pa>2107</pa>
+                </team><team id="58566">
+                    <teamName>BK AQUACITY POPRAD</teamName>
+                    <wins>9</wins>
+                    <losses>13</losses>
+                    <pf>2095</pf>
+                    <pa>2282</pa>
+                </team><team id="58377">
+                    <teamName>SKB Red Dragons Hanusovce</teamName>
+                    <wins>8</wins>
+                    <losses>14</losses>
+                    <pf>2013</pf>
+                    <pa>2011</pa>
+                </team><team id="58402">
+                    <teamName>Bascet boys</teamName>
+                    <wins>4</wins>
+                    <losses>18</losses>
+                    <pf>1941</pf>
+                    <pa>2234</pa>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        <playoffs>
+            
+            <quarterfinals>
+                
+                <match id="12798311" start="2009-05-19T16:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="58449">
+                        <teamName>Confusing Pigs</teamName>
+<score>70</score>
+                    </awayTeam>
+                    <homeTeam id="58379">
+                        <teamName>Namestovo Devils</teamName>
+<score>83</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798312" start="2009-05-19T16:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="58505">
+                        <teamName>BK Avalanche Bardejov</teamName>
+<score>57</score>
+                    </awayTeam>
+                    <homeTeam id="58436">
+                        <teamName>Nitra Corgons</teamName>
+<score>101</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798313" start="2009-05-19T16:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="58378">
+                        <teamName>ruzinov</teamName>
+<score>58</score>
+                    </awayTeam>
+                    <homeTeam id="58425">
+                        <teamName>Csont Nélkül</teamName>
+<score>96</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798314" start="2009-05-19T16:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="58445">
+                        <teamName>Strong mans</teamName>
+<score>68</score>
+                    </awayTeam>
+                    <homeTeam id="58430">
+                        <teamName>Bratislava Globetrotters</teamName>
+<score>80</score>
+                    </homeTeam>
+                </match>
+                
+            </quarterfinals>
+            
+            <semifinals>
+                
+                <match id="12893045" start="2009-05-23T16:00:00Z" type="league.semifinal">
+                    <awayTeam id="58436">
+                        <teamName>Nitra Corgons</teamName>
+<score>92</score>
+                    </awayTeam>
+                    <homeTeam id="58379">
+                        <teamName>Namestovo Devils</teamName>
+<score>97</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12893046" start="2009-05-23T16:00:00Z" type="league.semifinal">
+                    <awayTeam id="58430">
+                        <teamName>Bratislava Globetrotters</teamName>
+<score>107</score>
+                    </awayTeam>
+                    <homeTeam id="58425">
+                        <teamName>Csont Nélkül</teamName>
+<score>116</score>
+                    </homeTeam>
+                </match>
+                
+            </semifinals>
+            
+            <finals>
+                
+                <match id="12979945" start="2009-05-26T16:00:00Z" type="league.final">
+                    <awayTeam id="58379">
+                        <teamName>Namestovo Devils</teamName>
+<score>82</score>
+                    </awayTeam>
+                    <homeTeam id="58425">
+                        <teamName>Csont Nélkül</teamName>
+<score>108</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12979946" start="2009-05-30T16:00:00Z" type="league.final">
+                    <awayTeam id="58425">
+                        <teamName>Csont Nélkül</teamName>
+<score>59</score>
+                    </awayTeam>
+                    <homeTeam id="58379">
+                        <teamName>Namestovo Devils</teamName>
+<score>127</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12979947" start="2009-05-31T16:00:00Z" type="league.final">
+                    <awayTeam id="58379">
+                        <teamName>Namestovo Devils</teamName>
+<score>61</score>
+                    </awayTeam>
+                    <homeTeam id="58425">
+                        <teamName>Csont Nélkül</teamName>
+<score>98</score>
+                    </homeTeam>
+                </match>
+                
+            </finals>
+            
+        </playoffs>
+        
+        
+        <relegation>
+                
+                <match id="12798315" start="2009-05-19T16:00:00Z" type="league.relegation">
+                    <awayTeam id="58377">
+                        <teamName>SKB Red Dragons Hanusovce</teamName>
+<score>84</score>
+                    </awayTeam>
+                    <homeTeam id="58385">
+                        <teamName>Nitrička</teamName>
+<score>100</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798318" start="2009-05-19T16:00:00Z" type="league.relegation">
+                    <awayTeam id="58420">
+                        <teamName>And1 Zalesie</teamName>
+<score>118</score>
+                    </awayTeam>
+                    <homeTeam id="58566">
+                        <teamName>BK AQUACITY POPRAD</teamName>
+<score>113</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798316" start="2009-05-23T16:00:00Z" type="league.relegation">
+                    <awayTeam id="58385">
+                        <teamName>Nitrička</teamName>
+<score>81</score>
+                    </awayTeam>
+                    <homeTeam id="58377">
+                        <teamName>SKB Red Dragons Hanusovce</teamName>
+<score>69</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798319" start="2009-05-23T16:00:00Z" type="league.relegation">
+                    <awayTeam id="58566">
+                        <teamName>BK AQUACITY POPRAD</teamName>
+<score>106</score>
+                    </awayTeam>
+                    <homeTeam id="58420">
+                        <teamName>And1 Zalesie</teamName>
+<score>102</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12798320" start="2009-05-26T16:00:00Z" type="league.relegation">
+                    <awayTeam id="58420">
+                        <teamName>And1 Zalesie</teamName>
+<score>92</score>
+                    </awayTeam>
+                    <homeTeam id="58566">
+                        <teamName>BK AQUACITY POPRAD</teamName>
+<score>95</score>
+                    </homeTeam>
+                </match>
+                
+        </relegation>
+        
+        
+    </standings>
+</bbapi>

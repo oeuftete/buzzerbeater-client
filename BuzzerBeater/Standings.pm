@@ -44,6 +44,35 @@ sub _setFromXml {
         $self->{country} = encode_utf8( $el->first_child_text('country') );
 
         my $regular_season = $el->first_child('regularSeason');
+        my $playoffs       = $el->first_child('playoffs');
+
+        if ($playoffs) {
+            my $finals = $playoffs->first_child('finals');
+
+            my $_winning_score = -1;
+            my $_winning_team;
+            my %_final_wins;
+            foreach my $match ( $finals->children ) {
+                foreach my $team ( $match->children ) {
+                    my $team_id = $team->att('id');
+                    if ( my $score = $team->first_child('score') ) {
+                        if ( $score > $_winning_score ) {
+                            $_winning_score = $score;
+                            $_winning_team  = $team_id;
+                        }
+                    }
+                }
+                $_final_wins{$_winning_team}++;
+            }
+
+            $self->{league_winner} = undef;
+            while ( my ( $finals_team, $finals_wins ) = each %_final_wins ) {
+                if ( $finals_wins == 2 ) {
+                    $self->{league_winner} = $finals_team;
+                    last;
+                }
+            }
+        }
 
         my @conference_names = ( 'Big 8', 'Great 8' );
         my $conference_counter = 0;
@@ -90,8 +119,9 @@ sub team {
     return;
 }
 
-sub league     { my $self = shift; return $self->{league} }
-sub conference { my $self = shift; return $self->{conference} }
-sub country    { my $self = shift; return $self->{country} }
+sub league        { my $self = shift; return $self->{league} }
+sub league_winner { my $self = shift; return $self->{league_winner} }
+sub conference    { my $self = shift; return $self->{conference} }
+sub country       { my $self = shift; return $self->{country} }
 
 1;

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <standings season="8" retrieved="2009-05-31T19:54:34Z">
+        <league id="128" level="1">Naismith</league>
+        <country id="4">Canada</country>
+        <regularSeason>
+            <conference>
+                <team id="24823">
+                    <teamName>BC Törööö</teamName>
+                    <wins>21</wins>
+                    <losses>1</losses>
+                    <pf>2261</pf>
+                    <pa>1370</pa>
+                </team><team id="24920">
+                    <teamName>zero territory</teamName>
+                    <wins>15</wins>
+                    <losses>7</losses>
+                    <pf>1842</pf>
+                    <pa>1819</pa>
+                </team><team id="24809">
+                    <teamName>Molson Canadians</teamName>
+                    <wins>14</wins>
+                    <losses>8</losses>
+                    <pf>1995</pf>
+                    <pa>1790</pa>
+                </team><team id="24838">
+                    <teamName>North East Point Toastifiers</teamName>
+                    <wins>14</wins>
+                    <losses>8</losses>
+                    <pf>2056</pf>
+                    <pa>1942</pa>
+                </team><team id="24812">
+                    <teamName>NW Alberta Kaboom United</teamName>
+                    <wins>10</wins>
+                    <losses>12</losses>
+                    <pf>1839</pf>
+                    <pa>2003</pa>
+                </team><team id="24866">
+                    <teamName>Iqaluit Stingers</teamName>
+                    <wins>9</wins>
+                    <losses>13</losses>
+                    <pf>1826</pf>
+                    <pa>2001</pa>
+                </team><team id="24867">
+                    <teamName>Zanarkand Abes</teamName>
+                    <wins>8</wins>
+                    <losses>14</losses>
+                    <pf>2073</pf>
+                    <pa>2246</pa>
+                </team><team id="24861">
+                    <teamName>Waterloo Raptors</teamName>
+                    <wins>5</wins>
+                    <losses>17</losses>
+                    <pf>1982</pf>
+                    <pa>2272</pa>
+                </team>
+            </conference>
+            <conference>
+                <team id="24818">
+                    <teamName>Cape Sable Sculpins</teamName>
+                    <wins>21</wins>
+                    <losses>1</losses>
+                    <pf>2046</pf>
+                    <pa>1412</pa>
+                </team><team id="24831">
+                    <teamName>Serenity Now!</teamName>
+                    <wins>14</wins>
+                    <losses>8</losses>
+                    <pf>1989</pf>
+                    <pa>1919</pa>
+                </team><team id="24824">
+                    <teamName>Montréal Rockets</teamName>
+                    <wins>11</wins>
+                    <losses>11</losses>
+                    <pf>1917</pf>
+                    <pa>1953</pa>
+                </team><team id="24993">
+                    <teamName>Flying Yorts</teamName>
+                    <wins>11</wins>
+                    <losses>11</losses>
+                    <pf>1815</pf>
+                    <pa>1852</pa>
+                </team><team id="24904">
+                    <teamName>Jugglers</teamName>
+                    <wins>10</wins>
+                    <losses>12</losses>
+                    <pf>1955</pf>
+                    <pa>1983</pa>
+                </team><team id="24910">
+                    <teamName>Firefly</teamName>
+                    <wins>6</wins>
+                    <losses>16</losses>
+                    <pf>1765</pf>
+                    <pa>2043</pa>
+                </team><team id="24813">
+                    <teamName>Aston Midhurst</teamName>
+                    <wins>5</wins>
+                    <losses>17</losses>
+                    <pf>1748</pf>
+                    <pa>2090</pa>
+                </team><team id="24877">
+                    <teamName>The Alexander Keiths</teamName>
+                    <wins>2</wins>
+                    <losses>20</losses>
+                    <pf>1781</pf>
+                    <pa>2195</pa>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        <playoffs>
+            
+            <quarterfinals>
+                
+                <match id="12855127" start="2009-05-19T23:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="24838">
+                        <teamName>North East Point Toastifiers</teamName>
+<score>75</score>
+                    </awayTeam>
+                    <homeTeam id="24823">
+                        <teamName>BC Törööö</teamName>
+<score>98</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855128" start="2009-05-19T23:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="24809">
+                        <teamName>Molson Canadians</teamName>
+<score>77</score>
+                    </awayTeam>
+                    <homeTeam id="24920">
+                        <teamName>zero territory</teamName>
+<score>83</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855129" start="2009-05-19T23:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="24993">
+                        <teamName>Flying Yorts</teamName>
+<score>63</score>
+                    </awayTeam>
+                    <homeTeam id="24818">
+                        <teamName>Cape Sable Sculpins</teamName>
+<score>94</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855130" start="2009-05-19T23:00:00Z" type="league.quarterfinal">
+                    <awayTeam id="24824">
+                        <teamName>Montréal Rockets</teamName>
+<score>90</score>
+                    </awayTeam>
+                    <homeTeam id="24831">
+                        <teamName>Serenity Now!</teamName>
+<score>106</score>
+                    </homeTeam>
+                </match>
+                
+            </quarterfinals>
+            
+            <semifinals>
+                
+                <match id="12927012" start="2009-05-23T23:00:00Z" type="league.semifinal">
+                    <awayTeam id="24920">
+                        <teamName>zero territory</teamName>
+<score>72</score>
+                    </awayTeam>
+                    <homeTeam id="24823">
+                        <teamName>BC Törööö</teamName>
+<score>104</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12927013" start="2009-05-23T23:00:00Z" type="league.semifinal">
+                    <awayTeam id="24831">
+                        <teamName>Serenity Now!</teamName>
+<score>82</score>
+                    </awayTeam>
+                    <homeTeam id="24818">
+                        <teamName>Cape Sable Sculpins</teamName>
+<score>110</score>
+                    </homeTeam>
+                </match>
+                
+            </semifinals>
+            
+            <finals>
+                
+                <match id="13036710" start="2009-05-26T23:00:00Z" type="league.final">
+                    <awayTeam id="24818">
+                        <teamName>Cape Sable Sculpins</teamName>
+<score>69</score>
+                    </awayTeam>
+                    <homeTeam id="24823">
+                        <teamName>BC Törööö</teamName>
+<score>102</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="13036711" start="2009-05-30T23:00:00Z" type="league.final">
+                    <awayTeam id="24823">
+                        <teamName>BC Törööö</teamName>
+<score>55</score>
+                    </awayTeam>
+                    <homeTeam id="24818">
+                        <teamName>Cape Sable Sculpins</teamName>
+<score>113</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="13036712" start="2009-05-31T23:00:00Z" type="league.final">
+                    <awayTeam id="24818">
+                        <teamName>Cape Sable Sculpins</teamName>
+                    </awayTeam>
+                    <homeTeam id="24823">
+                        <teamName>BC Törööö</teamName>
+                    </homeTeam>
+                </match>
+                
+            </finals>
+            
+        </playoffs>
+        
+        
+        <relegation>
+                
+                <match id="12855131" start="2009-05-19T23:00:00Z" type="league.relegation">
+                    <awayTeam id="24813">
+                        <teamName>Aston Midhurst</teamName>
+<score>109</score>
+                    </awayTeam>
+                    <homeTeam id="24866">
+                        <teamName>Iqaluit Stingers</teamName>
+<score>98</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855134" start="2009-05-19T23:00:00Z" type="league.relegation">
+                    <awayTeam id="24867">
+                        <teamName>Zanarkand Abes</teamName>
+<score>93</score>
+                    </awayTeam>
+                    <homeTeam id="24910">
+                        <teamName>Firefly</teamName>
+<score>100</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855132" start="2009-05-23T23:00:00Z" type="league.relegation">
+                    <awayTeam id="24866">
+                        <teamName>Iqaluit Stingers</teamName>
+<score>114</score>
+                    </awayTeam>
+                    <homeTeam id="24813">
+                        <teamName>Aston Midhurst</teamName>
+<score>127</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855135" start="2009-05-23T23:00:00Z" type="league.relegation">
+                    <awayTeam id="24910">
+                        <teamName>Firefly</teamName>
+<score>98</score>
+                    </awayTeam>
+                    <homeTeam id="24867">
+                        <teamName>Zanarkand Abes</teamName>
+<score>113</score>
+                    </homeTeam>
+                </match>
+                
+                <match id="12855136" start="2009-05-26T23:00:00Z" type="league.relegation">
+                    <awayTeam id="24867">
+                        <teamName>Zanarkand Abes</teamName>
+<score>103</score>
+                    </awayTeam>
+                    <homeTeam id="24910">
+                        <teamName>Firefly</teamName>
+<score>105</score>
+                    </homeTeam>
+                </match>
+                
+        </relegation>
+        
+        
+    </standings>
+</bbapi>
