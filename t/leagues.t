@@ -23,13 +23,24 @@ TODO: {
 my $bb = BuzzerBeater::Client->new;
 
 my $leagues;
-my $xml_input = read_file('t/files/leagues.xml');
-isa_ok( $leagues = $bb->leagues( { xml => $xml_input } ),
-    'BuzzerBeater::Leagues' );
 
-is( $leagues->countryid, 4, 'Country id' );
-is( $leagues->level,     3, 'League level' );
+{
+    my $xml_input = read_file('t/files/leagues.xml');
+    isa_ok( $leagues = $bb->leagues( { xml => $xml_input } ),
+        'BuzzerBeater::Leagues' );
 
-my $lh = $leagues->leagues;
-is( scalar keys %$lh, 16,      'Number of leagues returned' );
-is( $lh->{137},       'III.5', 'League name by id' );
+    is( $leagues->countryid, 4, 'Country id' );
+    is( $leagues->level,     3, 'League level' );
+
+    my $lh = $leagues->leagues;
+    is( scalar keys %$lh, 16,      'Number of leagues returned' );
+    is( $lh->{137},       'III.5', 'League name by id' );
+}
+
+{
+    my $xml_input = read_file('t/files/leagues_utf8_league_name.xml');
+    isa_ok( $leagues = $bb->leagues( { xml => $xml_input } ),
+        'BuzzerBeater::Leagues' );
+    my $lh = $leagues->leagues;
+    is( $lh->{1847}, 'Virslīga', 'utf-8 league name' );
+}

@@ -50,7 +50,7 @@ sub _setFromXml {
         #  Loop over the country list.
         my %leagues;
         foreach my $league ( $el->children ) {
-            $leagues{ $league->att('id') } = $league->text;
+            $leagues{ $league->att('id') } = encode_utf8($league->text);
         }
         $self->{leagues} = \%leagues;
     }
