@@ -35,6 +35,7 @@ my $bb = BuzzerBeater::Client->new;
     is( $teaminfo->owner,     'oeuftete',            'Owner' );
     is( $teaminfo->shortName, 'CSI',                 'Short name' );
     is( $teaminfo->teamName,  'Cape Sable Sculpins', 'Team name' );
+    is( $teaminfo->id,        24818,                 'Team id' );
 }
 
 #  Bot team
