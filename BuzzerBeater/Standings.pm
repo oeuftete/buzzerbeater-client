@@ -46,6 +46,7 @@ sub _setFromXml {
         my $regular_season = $el->first_child('regularSeason');
         my $playoffs       = $el->first_child('playoffs');
 
+        #  TODO: The league winner is so much easier than this!
         if ( $playoffs && ( my $finals = $playoffs->first_child('finals') ) )
         {
 
