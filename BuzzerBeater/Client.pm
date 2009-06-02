@@ -78,7 +78,7 @@ sub login {
 
     if ( $response->is_success ) {
 
-        ( $self->debug > 0 ) && printf "%s\n", $response->content;
+        ( $self->debug > 0 ) && printf STDERR "%s\n", $response->content;
         if ( $self->debug > 1 ) {
             open RESPONSE, ">dumps/login.xml"
                 or croak "Unable to open file to dump xml: $!\n";
@@ -116,7 +116,7 @@ sub logout {
     my $response = $self->request($req);
 
     if ( $response->is_success ) {
-        ( $self->debug > 0 ) && printf "%s\n", $response->content;
+        ( $self->debug > 0 ) && printf STDERR "%s\n", $response->content;
         if ( $self->debug > 1 ) {
             open RESPONSE, ">dumps/logout.xml"
                 or croak "Unable to open file to dump xml: $!\n";
@@ -172,6 +172,10 @@ sub _initialize {
         $self->debug( $args{debug} );
     }
 
+    if ( exists $ENV{BB_DEBUG} ) {
+        $self->debug( $ENV{BB_DEBUG} );
+    }
+
     $self->{apiUrls} = [
         qw ( http://www.buzzerbeater.com/BBAPI/
             http://www2.buzzerbeater.org/BBAPI/ )
@@ -200,7 +204,7 @@ sub _newRequest {
         $url .= '?' . join( '&', map { $_ . '=' . $p->{$_} } keys %$p );
     }
 
-    $self->debug && print "Sending [$url]\n";
+    $self->debug && print STDERR "Sending [$url]\n";
     my $req = HTTP::Request->new( GET => $url );
 }
 
@@ -219,14 +223,14 @@ sub _generic {
     eval "require $_submodule";
     croak $@ if $@;
 
-    #  TODO: OK, this is not done well, is it?  
+    #  TODO: OK, this is not done well, is it?
     #
     #  What needs to happen:
     #    - return $_submodule->new(@_)
     #    - Let $_submodule's new call its _initialize
     #    - Define a BB::AbstractPage, and put _abstractRequest there.
     #
-    my $obj           = {};
+    my $obj = {};
     bless $obj, $_submodule;
 
     #  TODO: Really, @_ ???
@@ -250,7 +254,7 @@ sub _abstractRequest {
 
     #  TODO: Is the xml option set?  If so make the request
     if ( exists( $options->{xml} ) ) {
-        ( $self->debug > 0 ) && printf "%s\n", $options->{xml};
+        ( $self->debug > 0 ) && printf STDERR "%s\n", $options->{xml};
         $$r->_setFromXml( $options->{xml} );
     }
     else {
@@ -265,10 +269,10 @@ sub _abstractRequest {
         if ( $response->is_success ) {
 
             if ( $self->debug > 1 ) {
-                printf "%s\n", $response->as_string;
+                printf STDERR "%s\n", $response->as_string;
             }
             elsif ( $self->debug > 0 ) {
-                printf "%s\n", $response->content;
+                printf STDERR "%s\n", $response->content;
             }
 
             if ( $self->debug > 1 ) {
@@ -282,7 +286,7 @@ sub _abstractRequest {
         else {
             $self->{lastError}
                 = "Unexpected error: " . $response->status_line;
-            ( $self->debug > 0 ) && printf "%s\n", $response->as_string;
+            ( $self->debug > 0 ) && printf STDERR "%s\n", $response->as_string;
             return;
         }
     }
