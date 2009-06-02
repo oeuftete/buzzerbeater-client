@@ -42,6 +42,8 @@ my $bb = BuzzerBeater::Client->new();
             'Great 8', 'Conference name correct' );
     }
 
+    is( $standings->team(1), undef,
+        'team returns undef if team not in standings' );
     is( $standings->league_winner, undef,
         'No playoff winner during regular season' );
 }
