@@ -61,10 +61,7 @@ my $bb = BuzzerBeater::Client->new;
     my $xml_input = read_file('t/files/teaminfo_misentitified_aquo.xml');
     my $teaminfo = $bb->teaminfo( { xml => $xml_input } );
 
-    TODO: {
-        local $TODO = 'Work around misencoded &aquo;';
-        is( $teaminfo->teamName, 'Bobo\'s', 'Team name with \'' );
-    }
+    is( $teaminfo->teamName, q{Bobo's}, q{Team name with '} );
 }
 
 #  The "Turkey Test"

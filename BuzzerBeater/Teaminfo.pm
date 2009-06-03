@@ -7,9 +7,10 @@ use warnings;
 
 package BuzzerBeater::Teaminfo;
 
-use Encode;
 use XML::Twig;
 use Carp;
+
+use BuzzerBeater::Common::Utils qw(encode_bb_text);
 
 sub new {
     my $class = shift;
@@ -43,7 +44,7 @@ sub _setFromXml {
 
         #  Set the basic data
         foreach my $team_data ( $el->children ) {
-            $self->{ $team_data->gi } = encode_utf8( $team_data->text );
+            $self->{ $team_data->gi } = encode_bb_text( $team_data->text );
         }
 
         $self->{leagueid}  = $el->first_child('league')->att('id');

@@ -4,9 +4,14 @@
 use strict;
 use warnings;
 
-use Test::More qw(no_plan);
+use Test::More tests => 10;
 
-BEGIN { use_ok( 'BuzzerBeater::Common::Utils', qw(is_match_type) ); }
+BEGIN {
+    use_ok(
+        'BuzzerBeater::Common::Utils', qw(is_match_type
+            encode_bb_text)
+    );
+}
 
 TODO: {
     eval "use Test::Pod::Coverage";
@@ -19,6 +24,7 @@ TODO: {
         'BuzzerBeater::Common::Utils pod is covered' );
 }
 
+#  is_match_type
 ok( is_match_type( 'friendly', 'friendly' ), 'Friendlies are friendly' );
 ok( !is_match_type( 'league.rs', 'friendly' ),
     'League matches not friendly' );
@@ -28,3 +34,12 @@ ok( is_match_type( 'league.rs', 'competitive' ),
     'League matches are competitive' );
 ok( is_match_type( 'bbb', 'WRONG' ), 'Garbage match type passes through' );
 
+#  encode_bb_text
+is( encode_bb_text('Cape Sable Sculpins'),
+    'Cape Sable Sculpins',
+    'Basic team name unchanged'
+);
+is( encode_bb_text('Hobo%s Bobby Socks'),
+    q{Hobo's Bobby Socks},
+    'Percent sign becomes single quote'
+);
