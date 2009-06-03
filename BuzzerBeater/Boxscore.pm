@@ -13,6 +13,7 @@ use feature 'switch';
 
 use XML::Twig;
 use Carp;
+use Encode;
 
 use BuzzerBeater::Common::Utils qw(is_match_type);
 
@@ -69,7 +70,8 @@ sub _parse_team {
     $team_entry->{id} = $team->att('id');
 
     foreach my $top_child (qw(offStrategy defStrategy shortName teamName)) {
-        $team_entry->{$top_child} = $team->first_child_text($top_child);
+        $team_entry->{$top_child}
+            = encode_utf8( $team->first_child_text($top_child) );
     }
 
     my $totals = $team->first_child('boxscore')->first_child('teamTotals');
