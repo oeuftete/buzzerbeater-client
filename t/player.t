@@ -1,10 +1,11 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More qw(no_plan);
+use Test::More;
 use Test::Warn;
 use File::Slurp;
 
@@ -73,3 +74,4 @@ my $bb = BuzzerBeater::Client->new();
     warning_like { is( $player->josef_ka, undef, 'Salary estimation fails' ) }
     qr/estimation not possible/, 'Expected warning message';
 }
+done_testing;

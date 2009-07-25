@@ -1,10 +1,11 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More tests => 25;
+use Test::More;
 use File::Slurp;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
@@ -77,3 +78,4 @@ my $bb = BuzzerBeater::Client->new;
         'Opponent teamname with utf-8'
     );
 }
+done_testing;

@@ -1,10 +1,11 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More qw(no_plan);
+use Test::More;
 use File::Slurp;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
@@ -38,3 +39,6 @@ is( $country_by_id{34}->{name}, 'Bolivia', 'By id: name lookup' );
 my %country_by_name = $countries->country_list_by_name;
 is( $country_by_name{Nippon}->{firstSeason},
     3, 'By name: first season lookup' );
+
+ok( exists $country_by_name{'Ísland'}, 'utf-8 country name' );
+done_testing;

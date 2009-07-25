@@ -7,7 +7,6 @@ use warnings;
 
 package BuzzerBeater::Leagues;
 
-use Encode;
 use XML::Twig;
 use Carp;
 
@@ -50,7 +49,7 @@ sub _setFromXml {
         #  Loop over the country list.
         my %leagues;
         foreach my $league ( $el->children ) {
-            $leagues{ $league->att('id') } = encode_utf8($league->text);
+            $leagues{ $league->att('id') } = $league->text;
         }
         $self->{leagues} = \%leagues;
     }

@@ -7,7 +7,6 @@ use warnings;
 
 package BuzzerBeater::Standings;
 
-use Encode;
 use XML::Twig;
 use Carp;
 
@@ -40,8 +39,8 @@ sub _setFromXml {
 
     if ( $el->gi eq 'standings' ) {
         $self->{season}  = $el->att('season');
-        $self->{league}  = encode_utf8( $el->first_child_text('league') );
-        $self->{country} = encode_utf8( $el->first_child_text('country') );
+        $self->{league}  = $el->first_child_text('league');
+        $self->{country} = $el->first_child_text('country');
 
         my $regular_season = $el->first_child('regularSeason');
         my $playoffs       = $el->first_child('playoffs');

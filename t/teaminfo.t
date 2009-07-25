@@ -1,12 +1,12 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More qw(no_plan);
+use Test::More;
 use File::Slurp;
-use Encode;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
@@ -69,10 +69,7 @@ my $bb = BuzzerBeater::Client->new;
     my $xml_input = read_file('t/files/teaminfo_unicode_name_turkish.xml');
     my $teaminfo = $bb->teaminfo( { xml => $xml_input } );
 
-    is( $teaminfo->teamName,
-        encode_utf8("k\x{0131}rk\x{0131}srak eagles"),
-        'Turkish team name'
-    );
+    is( $teaminfo->teamName, 'kırkısrak eagles', 'Turkish team name' );
 }
 
 #  Chinese
@@ -80,10 +77,7 @@ my $bb = BuzzerBeater::Client->new;
     my $xml_input = read_file('t/files/teaminfo_unicode_name.xml');
     my $teaminfo = $bb->teaminfo( { xml => $xml_input } );
 
-    is( $teaminfo->teamName,
-        encode_utf8("\x{5438}\x{8840}\x{9b3c}"),
-        'Chinese team name'
-    );
+    is( $teaminfo->teamName, '吸血鬼', 'Chinese team name' );
 }
 
 #  Chinese owner
@@ -91,10 +85,7 @@ my $bb = BuzzerBeater::Client->new;
     my $xml_input = read_file('t/files/teaminfo_unicode_owner.xml');
     my $teaminfo = $bb->teaminfo( { xml => $xml_input } );
 
-    is( $teaminfo->owner,
-        encode_utf8("\x{7c98}\x{8c46}\x{5305}"),
-        'Chinese team owner'
-    );
+    is( $teaminfo->owner, '粘豆包', 'Chinese team owner' );
 }
 
 #  Weird unicode owner
@@ -102,8 +93,7 @@ my $bb = BuzzerBeater::Client->new;
     my $xml_input = read_file('t/files/teaminfo_unicode_owner_2.xml');
     my $teaminfo = $bb->teaminfo( { xml => $xml_input } );
 
-    is( $teaminfo->owner,
-        encode_utf8("mosva\x{261c}"),
-        'Weird unicode team owner'
-    );
+    is( $teaminfo->owner, 'mosva☜', 'Weird unicode team owner' );
 }
+
+done_testing;

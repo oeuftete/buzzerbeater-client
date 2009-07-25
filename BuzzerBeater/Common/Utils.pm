@@ -11,7 +11,6 @@ use parent qw(Exporter);
 our @EXPORT_OK = qw(is_match_type encode_bb_text);
 
 use Carp qw(carp);
-use Encode;
 
 #  This is what mixins/roles are for, I guess.
 sub is_match_type {
@@ -44,7 +43,7 @@ sub is_match_type {
 sub encode_bb_text {
     my $bb_text = shift;
     $bb_text =~ s/%/'/g;
-    return encode_utf8($bb_text);
+    return $bb_text;
 }
 
 1;

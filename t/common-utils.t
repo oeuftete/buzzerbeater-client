@@ -1,10 +1,11 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More tests => 10;
+use Test::More;
 
 BEGIN {
     use_ok(
@@ -39,7 +40,10 @@ is( encode_bb_text('Cape Sable Sculpins'),
     'Cape Sable Sculpins',
     'Basic team name unchanged'
 );
+is( encode_bb_text('粘豆包'), '粘豆包', 'Unicode unchanged' );
 is( encode_bb_text('Hobo%s Bobby Socks'),
     q{Hobo's Bobby Socks},
     'Percent sign becomes single quote'
 );
+
+done_testing;

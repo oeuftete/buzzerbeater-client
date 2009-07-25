@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <standings season="9" retrieved="2009-07-24T23:54:21Z">
+        <league id="149" level="1">I.1</league>
+        <country id="5">China</country>
+        <regularSeason>
+            <conference>
+                <team id="25331">
+                    <teamName>吸血鬼</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1264</pf>
+                    <pa>1044</pa>
+                </team><team id="25366">
+                    <teamName>Strong Team</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1390</pf>
+                    <pa>1229</pa>
+                </team><team id="25443">
+                    <teamName>25443</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1114</pf>
+                    <pa>1036</pa>
+                </team><team id="25163">
+                    <teamName>Big Bomb</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1110</pf>
+                    <pa>1124</pa>
+                </team><team id="25195">
+                    <teamName>Moon Walker</teamName>
+                    <wins>5</wins>
+                    <losses>8</losses>
+                    <pf>887</pf>
+                    <pa>1097</pa>
+                </team><team id="25368">
+                    <teamName>Monsters,Inc.</teamName>
+                    <wins>4</wins>
+                    <losses>9</losses>
+                    <pf>1053</pf>
+                    <pa>1140</pa>
+                </team><team id="25241">
+                    <teamName>TIGER</teamName>
+                    <wins>4</wins>
+                    <losses>9</losses>
+                    <pf>1098</pf>
+                    <pa>1260</pa>
+                </team><team id="25294">
+                    <teamName>miniclutch</teamName>
+                    <wins>4</wins>
+                    <losses>9</losses>
+                    <pf>986</pf>
+                    <pa>1207</pa>
+                </team>
+            </conference>
+            <conference>
+                <team id="25346">
+                    <teamName>F.C. Internazionale @ Shanghai</teamName>
+                    <wins>10</wins>
+                    <losses>3</losses>
+                    <pf>1194</pf>
+                    <pa>863</pa>
+                </team><team id="25167">
+                    <teamName>Yule</teamName>
+                    <wins>10</wins>
+                    <losses>3</losses>
+                    <pf>1323</pf>
+                    <pa>1018</pa>
+                </team><team id="25371">
+                    <teamName>羌人之队</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1197</pf>
+                    <pa>1092</pa>
+                </team><team id="25178">
+                    <teamName>Bebop Jazz</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1072</pf>
+                    <pa>1054</pa>
+                </team><team id="25415">
+                    <teamName>hottli</teamName>
+                    <wins>6</wins>
+                    <losses>7</losses>
+                    <pf>1137</pf>
+                    <pa>1085</pa>
+                </team><team id="25439">
+                    <teamName>Gateman</teamName>
+                    <wins>5</wins>
+                    <losses>8</losses>
+                    <pf>1029</pf>
+                    <pa>1196</pa>
+                </team><team id="25435">
+                    <teamName>粘豆包</teamName>
+                    <wins>4</wins>
+                    <losses>9</losses>
+                    <pf>924</pf>
+                    <pa>1124</pa>
+                </team><team id="69309">
+                    <teamName>rockseu</teamName>
+                    <wins>2</wins>
+                    <losses>11</losses>
+                    <pf>1054</pf>
+                    <pa>1263</pa>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        
+        
+    </standings>
+</bbapi>

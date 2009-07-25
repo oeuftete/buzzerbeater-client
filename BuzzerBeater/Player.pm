@@ -12,8 +12,6 @@ use warnings;
 package BuzzerBeater::Player;
 
 use Carp;
-
-use Encode;
 use XML::Twig;
 
 sub new {
@@ -63,7 +61,7 @@ sub basic {
 
     if ( @_ == 2 ) {
         my ( $basicGi, $basicText ) = @_;
-        $self->{$basicGi} = encode_utf8($basicText);
+        $self->{$basicGi} = $basicText;
     }
     elsif ( @_ == 1 ) {
         return $self->{ $_[0] };
@@ -83,8 +81,7 @@ sub nationality {
     my $self = shift;
 
     if (@_) {
-        ( $self->{nationality}->{name}, $self->{nationality}->{id} )
-            = map { encode_utf8($_) } @_;
+        ( $self->{nationality}->{name}, $self->{nationality}->{id} ) = @_;
         return $self;
     }
     return $self->{nationality};
@@ -123,31 +120,31 @@ sub name {
 #  described at
 #  L<http://www.buzzerbeater.com/BBWeb/Forum/read.aspx?thread=46657&m=42>, to
 #  predict the salary for a given player ID.  Here's an excerpt from that post:
-#  
+#
 #      From: Josef Ka
 #      To: Rambo VT
 #      46657.42 in reply to 46657.41
 #      Date: 11/4/2008 4:21:08 AM
 #      Salary formulas for BuzzerBeater
-#      
+#
 #      [...]
-#      
+#
 #      --
 #      UPDATE 2008/11/29
-#      
+#
 #      Here are two new versions, one for the people who don't believe in ST, FT
 #      and EX for salary, and one for those who do. The prediction difference is
 #      minimal.
-#      
+#
 #         JS    JR    OD    HA    DR    PA    IS    ID    RB    BL      const
 #      C_ 1,000 1,000 1,008 1,004 1,000 1,000 1,130 1,137 1,129 1,063   298
 #      PF 1,071 1,005 1,006 1,001 1,007 1,006 1,110 1,117 1,110 1,065   295
 #      SF 1,179 1,077 1,066 1,000 1,000 1,000 1,000 1,059 1,090 1,002   322
 #      SG 1,116 1,149 1,115 1,006 1,013 1,000 1,000 1,004 1,061 1,005   307
 #      PG 1,028 1,041 1,078 1,079 1,039 1,152 1,002 1,000 1,037 1,000   310
-#  
+#
 #  [KC: This may be implemented as an option at a later date.]
-#  
+#
 #      ___JS___JR___OD___HA___ DR___PA___IS___ID___RB___BL___ST___FT___EX___const
 #      C_ 1,000 1,000 1,008 1,002 1,000 1,000 1,129 1,138 1,130 1,064 1,000 1,003 1,000 293
 #      PF 1,071 1,000 1,008 1,000 1,000 1,007 1,114 1,116 1,110 1,067 1,008 1,000 1,008 277
@@ -158,9 +155,9 @@ sub name {
 sub josef_ka {
 
     my $self = shift;
-    
+
     my $player_skills = $self->skills;
-    if (! exists $player_skills->{jumpShot} ) {
+    if ( !exists $player_skills->{jumpShot} ) {
         carp "Salary estimation not possible without skills";
         return;
     }
@@ -243,7 +240,7 @@ sub josef_ka {
         },
     );
 
-    my $t             = $weights{ $self->basic('bestPosition') };
+    my $t = $weights{ $self->basic('bestPosition') };
 
     my $salary = $t->{multiplier};
 

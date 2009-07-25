@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <standings season="9" retrieved="2009-07-25T11:39:01Z">
+        <league id="1847" level="1">Virslīga</league>
+        <country id="46">Latvija</country>
+        <regularSeason>
+            <conference>
+                <team id="51596">
+                    <teamName>CLUB Purvs</teamName>
+                    <wins>10</wins>
+                    <losses>3</losses>
+                    <pf>1317</pf>
+                    <pa>1165</pa>
+                </team><team id="51802">
+                    <teamName>BK TUKUMS</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1301</pf>
+                    <pa>1075</pa>
+                </team><team id="51826">
+                    <teamName>BC Adazi</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1208</pf>
+                    <pa>1237</pa>
+                </team><team id="51747">
+                    <teamName>BK Rīgas Plēsoņas</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1262</pf>
+                    <pa>1230</pa>
+                </team><team id="51715">
+                    <teamName>BK Rapesco</teamName>
+                    <wins>7</wins>
+                    <losses>6</losses>
+                    <pf>1245</pf>
+                    <pa>1241</pa>
+                </team><team id="51637">
+                    <teamName>Broken Roses</teamName>
+                    <wins>6</wins>
+                    <losses>7</losses>
+                    <pf>1281</pf>
+                    <pa>1235</pa>
+                </team><team id="51600">
+                    <teamName>chernobilas wolves</teamName>
+                    <wins>5</wins>
+                    <losses>8</losses>
+                    <pf>1139</pf>
+                    <pa>1208</pa>
+                </team><team id="51846">
+                    <teamName>Jurmalas Žiperi</teamName>
+                    <wins>2</wins>
+                    <losses>11</losses>
+                    <pf>1353</pf>
+                    <pa>1480</pa>
+                </team>
+            </conference>
+            <conference>
+                <team id="146850">
+                    <teamName>Laachi</teamName>
+                    <wins>12</wins>
+                    <losses>1</losses>
+                    <pf>1408</pf>
+                    <pa>1060</pa>
+                </team><team id="51590">
+                    <teamName>Shrex</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1373</pf>
+                    <pa>1327</pa>
+                </team><team id="51567">
+                    <teamName>CC13</teamName>
+                    <wins>7</wins>
+                    <losses>6</losses>
+                    <pf>1353</pf>
+                    <pa>1329</pa>
+                </team><team id="146924">
+                    <teamName>Sausiņi</teamName>
+                    <wins>6</wins>
+                    <losses>7</losses>
+                    <pf>1228</pf>
+                    <pa>1261</pa>
+                </team><team id="51583">
+                    <teamName>SK Valmiera</teamName>
+                    <wins>6</wins>
+                    <losses>7</losses>
+                    <pf>1292</pf>
+                    <pa>1344</pa>
+                </team><team id="51732">
+                    <teamName>Vilcini</teamName>
+                    <wins>4</wins>
+                    <losses>9</losses>
+                    <pf>1171</pf>
+                    <pa>1441</pa>
+                </team><team id="51589">
+                    <teamName>BC Rigas Terreble Team</teamName>
+                    <wins>3</wins>
+                    <losses>10</losses>
+                    <pf>1331</pf>
+                    <pa>1439</pa>
+                </team><team id="146830">
+                    <teamName>Ruff Ryders</teamName>
+                    <wins>2</wins>
+                    <losses>11</losses>
+                    <pf>1206</pf>
+                    <pa>1396</pa>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        
+        
+    </standings>
+</bbapi>

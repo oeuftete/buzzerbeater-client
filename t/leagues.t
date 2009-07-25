@@ -1,10 +1,11 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More qw(no_plan);
+use Test::More;
 use File::Slurp;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
@@ -44,3 +45,4 @@ my $leagues;
     my $lh = $leagues->leagues;
     is( $lh->{1847}, 'Virslīga', 'utf-8 league name' );
 }
+done_testing;

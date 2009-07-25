@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbapi version="1">
+    <standings season="9" retrieved="2009-07-25T11:39:47Z">
+        <league id="1235" level="1">Bundesliga</league>
+        <country id="27">Österreich</country>
+        <regularSeason>
+            <conference>
+                <team id="41889">
+                    <teamName>LA_Lakers</teamName>
+                    <wins>10</wins>
+                    <losses>3</losses>
+                    <pf>1385</pf>
+                    <pa>1045</pa>
+                </team><team id="41711">
+                    <teamName>3D Dennis Scott´s Magic</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1306</pf>
+                    <pa>1159</pa>
+                </team><team id="41734">
+                    <teamName>Haselbacher Dreipunkter</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1329</pf>
+                    <pa>1260</pa>
+                </team><team id="41713">
+                    <teamName>Serious Celtics</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1273</pf>
+                    <pa>1287</pa>
+                </team><team id="41714">
+                    <teamName>CB Schnubu</teamName>
+                    <wins>7</wins>
+                    <losses>6</losses>
+                    <pf>1310</pf>
+                    <pa>1235</pa>
+                </team><team id="41901">
+                    <teamName>NaturalBornChillaz</teamName>
+                    <wins>6</wins>
+                    <losses>7</losses>
+                    <pf>1332</pf>
+                    <pa>1267</pa>
+                </team><team id="41755">
+                    <teamName>Wiener Sport-Club</teamName>
+                    <wins>1</wins>
+                    <losses>12</losses>
+                    <pf>1167</pf>
+                    <pa>1254</pa>
+                </team><team id="41716">
+                    <teamName>PL Korbblütler</teamName>
+                    <wins>0</wins>
+                    <losses>13</losses>
+                    <pf>795</pf>
+                    <pa>1737</pa>
+                </team>
+            </conference>
+            <conference>
+                <team id="41705">
+                    <teamName>Joe.City.Nets</teamName>
+                    <wins>11</wins>
+                    <losses>2</losses>
+                    <pf>1423</pf>
+                    <pa>1207</pa>
+                </team><team id="41768">
+                    <teamName>Eggersdorfer Rebounder</teamName>
+                    <wins>10</wins>
+                    <losses>3</losses>
+                    <pf>1371</pf>
+                    <pa>1137</pa>
+                </team><team id="41907">
+                    <teamName>indiana hernoiz</teamName>
+                    <wins>9</wins>
+                    <losses>4</losses>
+                    <pf>1262</pf>
+                    <pa>1162</pa>
+                </team><team id="41700">
+                    <teamName>Lokomotive Coma</teamName>
+                    <wins>8</wins>
+                    <losses>5</losses>
+                    <pf>1237</pf>
+                    <pa>1116</pa>
+                </team><team id="41718">
+                    <teamName>HowHigh</teamName>
+                    <wins>5</wins>
+                    <losses>8</losses>
+                    <pf>1342</pf>
+                    <pa>1301</pa>
+                </team><team id="41724">
+                    <teamName>simplebox</teamName>
+                    <wins>5</wins>
+                    <losses>8</losses>
+                    <pf>1232</pf>
+                    <pa>1296</pa>
+                </team><team id="41893">
+                    <teamName>Canti Ribelli</teamName>
+                    <wins>4</wins>
+                    <losses>9</losses>
+                    <pf>1240</pf>
+                    <pa>1304</pa>
+                </team><team id="41904">
+                    <teamName>deckngeber</teamName>
+                    <wins>2</wins>
+                    <losses>11</losses>
+                    <pf>1077</pf>
+                    <pa>1314</pa>
+                </team>
+            </conference>
+        </regularSeason>
+        
+        
+        
+    </standings>
+</bbapi>

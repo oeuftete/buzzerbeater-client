@@ -7,7 +7,6 @@ use warnings;
 
 package BuzzerBeater::Arena;
 
-use Encode;
 use XML::Twig;
 use Carp;
 
@@ -44,7 +43,7 @@ sub _setFromXml {
         $self->{teamid} = $el->att('teamid');
 
         #  Set name
-        $self->{name} = encode_utf8( $el->first_child_text('name') );
+        $self->{name} = $el->first_child_text('name');
 
         #  Set seats
         my $seats = $el->first_child('seats');

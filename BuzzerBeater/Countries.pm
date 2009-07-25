@@ -7,7 +7,6 @@ use warnings;
 
 package BuzzerBeater::Countries;
 
-use Encode;
 use XML::Twig;
 use Carp;
 
@@ -51,7 +50,7 @@ sub _setFromXml {
             #  mappings for easy lookup?
 
             my %_c_details = %{ $country->atts };
-            $_c_details{name} = encode_utf8( $country->text );
+            $_c_details{name} = $country->text;
 
             push @{ $self->{country} }, \%_c_details;
 

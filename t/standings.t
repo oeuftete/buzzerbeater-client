@@ -7,7 +7,6 @@ use warnings;
 
 use Test::More;
 use File::Slurp;
-use Encode;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
@@ -73,6 +72,22 @@ my $bb = BuzzerBeater::Client->new();
 
     isa_ok( my $team_standings = $standings->team(25331), 'HASH' );
     is( $team_standings->{teamName}, '吸血鬼', 'Chinese team name' );
+}
+
+{
+    my $xml_input = read_file('t/files/standings_utf8_league_name.xml');
+    isa_ok( my $standings = $bb->standings( { xml => $xml_input } ),
+        'BuzzerBeater::Standings' );
+
+    is( $standings->{league}, 'Virslīga', 'utf8 league name' );
+}
+
+{
+    my $xml_input = read_file('t/files/standings_utf8_country_name.xml');
+    isa_ok( my $standings = $bb->standings( { xml => $xml_input } ),
+        'BuzzerBeater::Standings' );
+
+    is( $standings->{country}, 'Österreich', 'utf8 country name' );
 }
 
 done_testing;
