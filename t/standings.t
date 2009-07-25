@@ -1,11 +1,13 @@
 #
 #  $Id$
 #
+use utf8;
 use strict;
 use warnings;
 
-use Test::More qw(no_plan);
+use Test::More;
 use File::Slurp;
+use Encode;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
 
@@ -63,3 +65,14 @@ my $bb = BuzzerBeater::Client->new();
     is( $standings->league_winner, undef,
         'No playoff winner ongoing finals' );
 }
+
+{
+    my $xml_input = read_file('t/files/standings_utf8_team_names.xml');
+    isa_ok( my $standings = $bb->standings( { xml => $xml_input } ),
+        'BuzzerBeater::Standings' );
+
+    isa_ok( my $team_standings = $standings->team(25331), 'HASH' );
+    is( $team_standings->{teamName}, '吸血鬼', 'Chinese team name' );
+}
+
+done_testing;

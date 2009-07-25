@@ -91,8 +91,7 @@ sub _setFromXml {
                 $place_counter++;
 
                 foreach my $team_in_conf_data ( $team_in_conf->children ) {
-                    $t->{ $team_in_conf_data->gi }
-                        = encode_utf8( $team_in_conf_data->text );
+                    $t->{ $team_in_conf_data->gi } = $team_in_conf_data->text;
                 }
                 push @team_standings, $t;
             }
