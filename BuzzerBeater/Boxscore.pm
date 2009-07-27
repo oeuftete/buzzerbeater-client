@@ -162,7 +162,10 @@ sub bbstat {
         $bbstat += $val;
     }
 
-    my @partials = @{ $self->{$k}->{partials} };
+    my $team = $self->_home_or_away($k)
+        or croak "Unable to resolve team [$k]";
+
+    my @partials = @{ $team->{partials} };
     if ( $normalize && scalar @partials > 4 ) {
         $bbstat *=  48.0 / ( 48.0 + ( 5.0 * ( scalar @partials - 4 ) ) );
         require Math::Round;

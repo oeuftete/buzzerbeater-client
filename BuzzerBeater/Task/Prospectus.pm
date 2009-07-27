@@ -128,7 +128,7 @@ sub compute_schedule_data {
 
         #  Generate a bbstat value, and track the max value with the match id.
         #  Keep the latest one.
-        my $bbstat = $box->bbstat( $self->id );
+        my $bbstat = $box->bbstat( $self->id, { normalize => 1, } );
         if ( $bbstat >= $computed->{max_bbstat}->[1] ) {
             $computed->{max_bbstat} = [ $box, $bbstat ];
         }
