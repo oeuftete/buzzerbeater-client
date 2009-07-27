@@ -68,8 +68,14 @@ sub _parse_team {
 
     $team_entry->{id} = $team->att('id');
 
-    foreach my $top_child (qw(offStrategy defStrategy shortName teamName)) {
+    foreach
+        my $top_child (qw(offStrategy defStrategy shortName teamName score))
+    {
         $team_entry->{$top_child} = $team->first_child_text($top_child);
+        if ( $top_child eq 'score' ) {
+            $team_entry->{partials} = [ split /,/,
+                $team->first_child($top_child)->att('partials') ];
+        }
     }
 
     my $totals = $team->first_child('boxscore')->first_child('teamTotals');
@@ -139,7 +145,12 @@ sub ratings {
 }
 
 sub bbstat {
-    my ( $self, $k ) = @_;
+    my ( $self, $k, $args ) = @_;
+
+    my $normalize;
+    if ( defined $args ) {
+        $normalize = $args->{normalize};
+    }
 
     my $r = $self->ratings($k);
 
@@ -149,6 +160,13 @@ sub bbstat {
           3*($1 - 1) + ( defined($2) ? $2/3 + 1 : 1 )
           !ex;
         $bbstat += $val;
+    }
+
+    my @partials = @{ $self->{$k}->{partials} };
+    if ( $normalize && scalar @partials > 4 ) {
+        $bbstat *=  48.0 / ( 48.0 + ( 5.0 * ( scalar @partials - 4 ) ) );
+        require Math::Round;
+        $bbstat = Math::Round::round($bbstat);
     }
 
     return $bbstat;

@@ -34,6 +34,13 @@ my $bb = BuzzerBeater::Client->new;
     is( $box->away->{id},          24867,       'Away team id' );
     is( $box->home->{id},          24818,       'Home team id' );
     is( $box->home->{offStrategy}, 'Push',      'Home offStrategy' );
+    is( $box->home->{score},       116,         'Home score' );
+
+    {
+        isa_ok( my $partials = $box->home->{partials}, 'ARRAY' );
+        is_deeply( [ 29, 25, 29, 33 ], $partials, 'Quarter scores ok' );
+    }
+
     is( $box->home->{teamName},
         'Cape Sable Sculpins',
         'Check home team name'
@@ -67,6 +74,10 @@ my $bb = BuzzerBeater::Client->new;
     #  This actually should be 106 on the regular displayed version, but
     #  the offensive flow is rounded differently in the API version.
     is( $box->bbstat('homeTeam'), 107, 'BBstat calculation' );
+    is( $box->bbstat( 'homeTeam', { normalize => 0, } ),
+        107, 'BBstat calculation explicitly non-normalized for OT' );
+    is( $box->bbstat( 'homeTeam', { normalize => 1, } ),
+        107, 'BBstat calculation normalized for OT' );
 }
 
 {
@@ -78,4 +89,17 @@ my $bb = BuzzerBeater::Client->new;
         'Opponent teamname with utf-8'
     );
 }
+
+{
+    my $xml_input = read_file('t/files/boxscore_one_overtime.xml');
+    isa_ok( my $box = $bb->boxscore( { xml => $xml_input } ),
+        'BuzzerBeater::Boxscore' );
+
+    is( $box->bbstat('homeTeam'), 99, 'BBstat calculation' );
+    is( $box->bbstat( 'homeTeam', { normalize => 0, } ),
+        99, 'BBstat calculation explicitly non-normalized for OT' );
+    is( $box->bbstat( 'homeTeam', { normalize => 1, } ),
+        90, 'BBstat calculation normalized for OT' );
+}
+
 done_testing;
