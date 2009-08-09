@@ -2,10 +2,11 @@
 #  $Id$
 #
 
+package BuzzerBeater::Client;
+
 use strict;
 use warnings;
 
-package BuzzerBeater::Client;
 use parent 'LWP::UserAgent';
 
 use Carp;
@@ -80,10 +81,10 @@ sub login {
 
         ( $self->debug > 0 ) && printf STDERR "%s\n", $response->content;
         if ( $self->debug > 1 ) {
-            open RESPONSE, ">dumps/login.xml"
+            open my $response_fh, '>', 'dumps/login.xml'
                 or croak "Unable to open file to dump xml: $!\n";
-            print RESPONSE $response->content;
-            close RESPONSE;
+            print $response_fh $response->content;
+            close $response_fh;
         }
 
         my $twig = XML::Twig->new(
@@ -118,10 +119,10 @@ sub logout {
     if ( $response->is_success ) {
         ( $self->debug > 0 ) && printf STDERR "%s\n", $response->content;
         if ( $self->debug > 1 ) {
-            open RESPONSE, ">dumps/logout.xml"
+            open my $response_fh, '>', 'dumps/logout.xml'
                 or croak "Unable to open file to dump xml: $!\n";
-            print RESPONSE $response->content;
-            close RESPONSE;
+            print $response_fh $response->content;
+            close $response_fh;
         }
 
         my $twig = XML::Twig->new(
@@ -220,6 +221,8 @@ sub _generic {
     my $return_module = ucfirst $method;
 
     my $_submodule = "BuzzerBeater::$return_module";
+
+    ## no critic (StringyEval}
     eval "require $_submodule";
     croak $@ if $@;
 
@@ -276,17 +279,18 @@ sub _abstractRequest {
             }
 
             if ( $self->debug > 1 ) {
-                open RESPONSE, ">dumps/$method.xml"
+                open my $response_fh, '>', 'dumps/$method.xml'
                     or croak "Unable to open file to dump xml: $!\n";
-                print RESPONSE $response->content;
-                close RESPONSE;
+                print $response_fh $response->content;
+                close $response_fh;
             }
             $$r->_setFromXml( $response->content );
         }
         else {
             $self->{lastError}
                 = "Unexpected error: " . $response->status_line;
-            ( $self->debug > 0 ) && printf STDERR "%s\n", $response->as_string;
+            ( $self->debug > 0 ) && printf STDERR "%s\n",
+                $response->as_string;
             return;
         }
     }
