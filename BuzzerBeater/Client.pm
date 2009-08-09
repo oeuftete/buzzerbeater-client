@@ -222,7 +222,7 @@ sub _generic {
 
     my $_submodule = "BuzzerBeater::$return_module";
 
-    ## no critic (StringyEval}
+    ## no critic (StringyEval)
     eval "require $_submodule";
     croak $@ if $@;
 
