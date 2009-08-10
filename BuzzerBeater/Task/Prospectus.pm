@@ -7,6 +7,7 @@ use Moose::Util::TypeConstraints;
 
 use BuzzerBeater::Client;
 use List::Util qw(sum);
+use Carp qw(croak);
 
 subtype 'BB_Client' => as 'Object' =>
     where { $_->isa('BuzzerBeater::Client') };
@@ -44,13 +45,22 @@ sub run {
     $self->client->login;
 
     my $teaminfo
-        = $self->client->teaminfo( { params => { teamid => $self->id } } );
+        = $self->client->teaminfo( { params => { teamid => $self->id } } )
+        || croak "Failed to retrieve teaminfo for ["
+        . $self->id . "]: "
+        . $self->client->lastError;
     my $roster
-        = $self->client->roster( { params => { teamid => $self->id } } );
+        = $self->client->roster( { params => { teamid => $self->id } } )
+        || croak "Failed to retrieve roster for ["
+        . $self->id . "]: "
+        . $self->client->lastError;
     my $standings
         = $self->client->standings(
         { params => { leagueid => $teaminfo->leagueid, } } )
-        ->team( $self->id );
+        ->team( $self->id )
+        || croak "Failed to retrieve standings for ["
+        . $self->id . "]: "
+        . $self->client->lastError;
 
     #  Compute a bunch of crap.
     my %computed_data;
@@ -102,7 +112,10 @@ sub compute_schedule_data {
     my $bb = $self->client;
 
     #  Gather the information from the schedule.
-    my $schedule = $bb->schedule( { params => { teamid => $self->id, } } );
+    my $schedule = $bb->schedule( { params => { teamid => $self->id, } } )
+        || croak "Failed to retrieve standings for ["
+        . $self->id . "]: "
+        . $bb->lastError;
 
     my $team_stats;
     for my $i ( -2 .. 2 ) {
