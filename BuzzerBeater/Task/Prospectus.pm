@@ -40,10 +40,6 @@ sub run {
 
     my $output = {};
 
-    #  TODO: Bit of a hack.  Always try to reestablish our session.  Only
-    #  works with Local::BB for now.
-    $self->client->login;
-
     my $teaminfo
         = $self->client->teaminfo( { params => { teamid => $self->id } } )
         || croak "Failed to retrieve teaminfo for ["
