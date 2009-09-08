@@ -96,8 +96,14 @@ sub pyth_record {
     my $exponent = 10;
 
     my $g = $s->{wins} + $s->{losses};
-    my $pct
-        = $s->{pf}**$exponent / ( $s->{pf}**$exponent + $s->{pa}**$exponent );
+
+    my $pct;
+    eval {
+        $pct
+            = $s->{pf}**$exponent
+            / ( $s->{pf}**$exponent + $s->{pa}**$exponent )
+    };
+    $pct = 0 if $@;
 
     return [ $g * $pct, $g * ( 1.0 - $pct ) ];
 }
