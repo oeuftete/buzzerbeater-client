@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 11;
+use Test::More;
 use Test::Output;
 
 BEGIN { use_ok('BuzzerBeater::Client'); }
@@ -60,3 +60,4 @@ my $login_params = { params => { login => $user, code => $access_code } };
     );
 }
 
+done_testing;

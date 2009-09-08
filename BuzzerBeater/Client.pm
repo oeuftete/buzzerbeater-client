@@ -178,12 +178,11 @@ sub _initialize {
     }
 
     $self->{apiUrls} = [
-        qw ( http://www.buzzerbeater.com/BBAPI/
-            http://www2.buzzerbeater.org/BBAPI/ )
+        qw ( http://old.buzzerbeater.com/BBAPI/ )
     ];
 
     $self->{_apiIterator}
-        = Array::Iterator::Circular->new( shuffle @{ $self->{apiUrls} } );
+        = Array::Iterator::Circular->new( [ shuffle @{ $self->{apiUrls} } ] );
     $self->_selectSite;
     $self->{lastError} = '';
     $self->cookie_jar( {} );
