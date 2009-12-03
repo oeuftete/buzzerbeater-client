@@ -178,7 +178,7 @@ sub _initialize {
     }
 
     $self->{apiUrls} = [
-        qw ( http://old.buzzerbeater.com/BBAPI/ )
+        qw ( http://bbapi.buzzerbeater.com/ )
     ];
 
     $self->{_apiIterator}
