@@ -1,34 +1,15 @@
 package BuzzerBeater::Task::Prospectus;
+
 use strict;
 use warnings;
 
 use Moose;
 use Moose::Util::TypeConstraints;
 
-use BuzzerBeater::Client;
 use List::Util qw(sum);
 use Carp qw(croak);
 
-subtype 'BB_Client' => as 'Object' =>
-    where { $_->isa('BuzzerBeater::Client') };
-
-coerce 'BB_Client' => from 'HashRef' => via {
-    my $bb = BuzzerBeater::Client->new;
-    $bb->login(
-        {   params => {
-                login => $_->{login},
-                code  => $_->{code},
-            }
-        }
-    );
-    return $bb;
-};
-
-has 'client' => (
-    is     => 'ro',
-    isa    => 'BB_Client',
-    coerce => 1,
-);
+extends 'BuzzerBeater::Task::Base';
 
 has 'id' => (
     is  => 'rw',
