@@ -13,13 +13,7 @@ subtype 'BB_Client' => as 'Object' =>
 
 coerce 'BB_Client' => from 'HashRef' => via {
     my $bb = BuzzerBeater::Client->new;
-    $bb->login(
-        {   params => {
-                login => $_->{login},
-                code  => $_->{code},
-            }
-        }
-    );
+    $bb->login( { params => $_ } );
     return $bb;
 };
 
