@@ -16,25 +16,36 @@ has 'id' => (
     isa => 'Int',
 );
 
+has 'season' => (
+    is  => 'rw',
+    isa => 'Int',
+);
+
+sub _season_param {
+    my $self = shift;
+    return $self->season ? ( season => $self->season, ) : ();
+}
+
 sub run {
     my $self = shift;
 
     my $output = {};
 
     my $teaminfo
-        = $self->client->teaminfo( { params => { teamid => $self->id } } )
+        = $self->client->teaminfo( { params => { teamid => $self->id, } } )
         || croak "Failed to retrieve teaminfo for ["
         . $self->id . "]: "
         . $self->client->lastError;
     my $roster
-        = $self->client->roster( { params => { teamid => $self->id } } )
+        = $self->client->roster( { params => { teamid => $self->id, } } )
         || croak "Failed to retrieve roster for ["
         . $self->id . "]: "
         . $self->client->lastError;
-    my $standings
-        = $self->client->standings(
-        { params => { leagueid => $teaminfo->leagueid, } } )
-        ->team( $self->id )
+    my $standings = $self->client->standings(
+        {   params =>
+                { leagueid => $teaminfo->leagueid, $self->_season_param, }
+        }
+        )->team( $self->id )
         || croak "Failed to retrieve standings for ["
         . $self->id . "]: "
         . $self->client->lastError;
@@ -82,7 +93,7 @@ sub pyth_record {
     eval {
         $pct
             = $s->{pf}**$exponent
-            / ( $s->{pf}**$exponent + $s->{pa}**$exponent )
+            / ( $s->{pf}**$exponent + $s->{pa}**$exponent );
     };
     $pct = 0 if $@;
 
@@ -95,7 +106,13 @@ sub compute_schedule_data {
     my $bb = $self->client;
 
     #  Gather the information from the schedule.
-    my $schedule = $bb->schedule( { params => { teamid => $self->id, } } )
+    my $schedule = $bb->schedule(
+        {   params => {
+                teamid => $self->id,
+                $self->_season_param,
+            }
+        }
+        )
         || croak "Failed to retrieve standings for ["
         . $self->id . "]: "
         . $bb->lastError;
