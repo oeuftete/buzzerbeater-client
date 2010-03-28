@@ -37,7 +37,7 @@ my $bb = BuzzerBeater::Client->new();
 
     #  Nationality
     my $nat = $player->nationality;
-    is( $nat->{id},   58,,      'Nationality name' );
+    is( $nat->{id},   58,       'Nationality name' );
     is( $nat->{name}, 'Polska', 'Nationality name' );
 
     #  Skills
@@ -50,7 +50,7 @@ my $bb = BuzzerBeater::Client->new();
     is( $basic->{jersey}, 49, 'Jersey' );
 
     #  Salary estimation
-    is( int( $player->josef_ka ), 3374, 'Salary estimation' );
+    is( int( $player->josef_ka ), 3563, 'Salary estimation' );
 }
 
 #  Extended characters in name.

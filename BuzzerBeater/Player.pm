@@ -247,6 +247,12 @@ sub josef_ka {
     while ( my ( $skill, $coef ) = each %{ $t->{skills} } ) {
         $salary *= $coef**$player_skills->{$skill};
     }
+
+    #  Inflation factor, season 12.
+    #  cf. http://www.buzzerbeater.com/community/forum/read.aspx?thread=136516&m=2
+    
+    $salary = $salary**1.006714;
+
     return $salary;
 }
 
