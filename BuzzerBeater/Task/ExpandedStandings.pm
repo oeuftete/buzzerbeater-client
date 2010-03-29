@@ -22,6 +22,9 @@ sub run {
             }
         }
     );
+
+    #  Now get the league schedule of each team
+    
 }
 
 no Moose;
