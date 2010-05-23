@@ -53,11 +53,8 @@ my $login_params = { params => { login => $user, code => $access_code } };
 {
     my $bb = BuzzerBeater::Client->new;
     $bb->debug(1);
-    stderr_like(
-        sub { undef $bb },
-        qr!Sending.*BBAPI/logout\.aspx!,
-        'Logout attempted on destruction.'
-    );
+    stderr_like( sub { undef $bb },
+        qr!Sending.*/logout\.aspx!, 'Logout attempted on destruction.' );
 }
 
 done_testing;
