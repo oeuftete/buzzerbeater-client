@@ -261,6 +261,9 @@ sub _abstractRequest {
     }
     else {
 
+        #  TODO: Set handlers on the UA to do the debugging.  Don't manage the
+        #  requests and responses manually... let the UA do it, so we don't
+        #  have to handle redirects.
         my $req = $self->_newRequest(
             {   apiMethod => $method,
                 params    => $options->{params}
