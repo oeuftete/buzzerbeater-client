@@ -128,7 +128,7 @@ sub compute_schedule_data {
     my %opponents;
     my $n_competitive_matches = 0;
 
-    foreach my $match ( @{$matches} ) {
+    for my $match ( @{$matches} ) {
         my $box = $bb->boxscore( { params => { matchid => $match->{id} } } );
 
         #  TODO: What do the main methods do when they crap out?
@@ -204,24 +204,29 @@ sub sorted_strategies {
     my %name_map = (
 
         # Offense
-        Base       => 'Base Offense',
-        Push       => 'Push the Ball',
-        LookInside => 'Look Inside',
-        LowPost    => 'Low Post',
-        RunAndGun  => 'Run and Gun',
+        Base             => 'Base Offense',
+        Push             => 'Push the Ball',
+        LookInside       => 'Look Inside',
+        LowPost          => 'Low Post',
+        RunAndGun        => 'Run and Gun',
+        InsideIsolation  => 'Inside Isolation',
+        OutsideIsolation => 'Outside Isolation',
 
         # Defense
-        ManToMan  => 'Man to Man',
-        '23Zone'  => '2-3 Zone',
-        '32Zone'  => '3-2 Zone',
-        '131Zone' => '1-3-1 Zone',
-        Press     => 'Full Court Press',
+        ManToMan         => 'Man to Man',
+        '23Zone'         => '2-3 Zone',
+        '32Zone'         => '3-2 Zone',
+        '131Zone'        => '1-3-1 Zone',
+        Press            => 'Full Court Press',
+        InsideBoxAndOne  => 'Inside Box and One',
+        OutsideBoxAndOne => 'Outside Box and One',
     );
 
     return my @s = sort { $b->{uses} <=> $a->{uses} }
         map {
         {   name => ( exists( $name_map{$_} ) ? $name_map{$_} : $_ ),
-            uses => $h->{$_}
+            uses => $h->{$_
+}
         }
         } keys %{$h};
 }
