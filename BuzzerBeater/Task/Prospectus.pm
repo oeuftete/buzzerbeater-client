@@ -225,8 +225,7 @@ sub sorted_strategies {
     return my @s = sort { $b->{uses} <=> $a->{uses} }
         map {
         {   name => ( exists( $name_map{$_} ) ? $name_map{$_} : $_ ),
-            uses => $h->{$_
-}
+            uses => $h->{$_}
         }
         } keys %{$h};
 }
